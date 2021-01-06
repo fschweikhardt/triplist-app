@@ -1,38 +1,48 @@
-.App {
+/* css - mobile first */
+
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+/* <-- structure --> */
+
+main, header, footer {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+  background-color: lightgray;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* <-- fonts --> */
+
+h1, h2, h3, p, a, ul, li {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1 {
+  font-size: 2.5em;
+  font-weight: 600;
 }
 
-.App-link {
-  color: #61dafb;
+h2 {
+  font-size: 2.5em;
+  font-weight: 500;
+  letter-spacing: .1em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h3 {
+  font-size: 1.75em;
+  font-weight: 200;
+}
+
+p {
+  font-size: 1.25em;
+  font-weight: 300;
+  word-spacing: .1em;
 }

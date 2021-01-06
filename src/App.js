@@ -5,21 +5,17 @@ import './App.css'
 class App extends React.Component {
 
   render() {
+    
     return (
       <div className="App">
-        <header className="App-header">
-          <p>
-            Edit <code>the code</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+        <header className="Header">
+          Header
         </header>
+          <main>
+            <h1>
+              H1
+            </h1>
+          </main>
       </div>
     )
   }
