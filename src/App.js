@@ -1,21 +1,20 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import './App.css'
+import LandingPage from './LandingPage'
 
 class App extends React.Component {
 
   render() {
-    
+
     return (
       <div className="App">
-        <header className="Header">
-          Header
-        </header>
-          <main>
-            <h1>
-              H1
-            </h1>
-          </main>
+        <Switch>
+          <Route
+            path='/'
+            component={LandingPage}
+          />
+        </Switch>
       </div>
     )
   }
