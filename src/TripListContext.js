@@ -1,9 +1,10 @@
 import React from 'react'
-//import STORE from './STORE'
 
 const TripListContext = React.createContext({
-    //lists: STORE,
-    username: 'Terry'
+    lists: [],
+    username: '',
+    addItem: () => {}, 
+    deleteItem: () => {}
 })
 
 export default TripListContext

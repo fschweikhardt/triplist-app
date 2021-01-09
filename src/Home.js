@@ -11,18 +11,37 @@ export default class Home extends React.Component {
     state = {
         //loggedin: false, 
         lists: STORE,
-        username: 'John Doe'  
+        username: 'John Doe', 
+        newItem: ''
       }
+
+    handleAddItem = (item) => {
+        console.log('addItem on home.js', item)
+        const newItems = this.state.lists[0].items
+        this.setState({
+            lists: [...newItems, item]
+        })
+    }
+
+    handleDeleteItem = (listId, itemId) => {
+        console.log('delete item on home.js', listId, itemId)
+    }
 
     render() {
         const value = {
             lists: this.state.lists,
-            username: this.state.username
+            username: this.state.username,
+            addItem: this.handleAddItem, 
+            deleteItem: this.handleDeleteItem
         }
 
         console.log(this.state.lists)
-        console.log(this.state.username)
+        //console.log(this.state.newItem)
+        //const testItems = this.state.lists[0].items
+        //console.log([...testItems, 'test'])
+
     return (
+
         <TripListContext.Provider value={value}>
             <div>
                 <header>

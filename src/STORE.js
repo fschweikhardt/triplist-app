@@ -2,12 +2,12 @@ export default [
     {
     id: 1,
     title: "With Partner", 
-    items: ["Paris", "Venice", "Rome"]
+    items: ["Paris", "Venice", "Rome", "Athens"]
     },
     {
     id: 2,
     title: "Solo", 
-    items: ["hiking", "camping", "skiing"]
+    items: ["hiking", "camping"]
     },
     {
     id: 3,
