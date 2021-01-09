@@ -15,24 +15,28 @@ export default class DisplayLists extends React.Component {
                     Lists
                 </h2>
                <ul>
-                   {this.context.lists.map( lists => {
+                   {this.context.lists.map( (lists, i) => {
+                       const idx = parseInt(lists.id + i)
+                       //console.log('display list idx', idx)
+                       //console.log('display list id', i)
                        return (
                            <li key={lists.id}>
+                               <hr />
                                <List
                                     id={lists.id}
+                                    idx={idx}
                                     title={lists.title}
                                     items={lists.items}
                                 />
+                                <hr />
                            </li>
                        )
                    })}
                </ul>
-               <button>
-                   ADD LIST
-               </button>
+               <br/>
                <br />
                <button>
-                   DELETE LIST
+                   ADD LIST
                </button>
             </div>
         )
