@@ -12,7 +12,7 @@ export default function LandingPage() {
             <h1>
               Save your trip ideas in one place
             </h1>
-            <Link to={'/welcome'}>
+            <Link to='/welcome'>
                 GET STARTED
             </Link>
             <p>The locations can be saved with different catagories: with partner, with in-laws, with friends.
