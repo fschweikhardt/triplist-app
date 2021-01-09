@@ -3,13 +3,9 @@ import { Route, Switch } from 'react-router-dom'
 import './App.css'
 import LandingPage from './LandingPage'
 import Welcome from './Welcome'
+import Home from './Home'
 
 class App extends React.Component {
-
-  state = {
-    loggedin: false, 
-    username: ''  
-  }
 
   render() {
 
@@ -23,6 +19,10 @@ class App extends React.Component {
           <Route
             path='/welcome'
             component={Welcome}
+          />
+          <Route 
+            path='/home'
+            component={Home}
           />
         </Switch>
       </div>
