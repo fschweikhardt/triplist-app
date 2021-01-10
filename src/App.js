@@ -6,14 +6,20 @@ import Welcome from './Welcome'
 import Home from './Home'
 
 class App extends React.Component {
+  constructor(props) {
+    super(props) 
+      this.state = {
+        username: ''
+      }
+    }
+  
 
-  state = {
-    username: 'cowboy'
-  }
+  
 
   handleGetUsername = (username) => {
+    console.log(username)
     this.setState({
-      username
+      username: username
     })
   }
 
@@ -22,7 +28,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Switch>
-          
+
           <Route 
             exact path='/'
             component={LandingPage}

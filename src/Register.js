@@ -7,9 +7,14 @@ export default class Register extends React.Component{
     //     super(props)
     // }
 
+    state = {
+        updateUsername: ''
+    }
+
     handleSubmit = (e) => {
-        //e.preventDefault()
+        e.preventDefault()
         console.log(e.target.username.value)
+        console.log(e.target.password.value)
     }
 
     render() {
@@ -31,13 +36,17 @@ export default class Register extends React.Component{
                         type='text'
                         id='username'
                         name='username'
-                        onChange={this.props.getUsername}>
+                        onChange={()=>this.props.getUsername("jake")}>
                     </input>
                 </label>
                 <br />
                 <label>
                     create password
-                    <input>
+                    <input
+                        type='text'
+                        id='password'
+                        name='password'
+                    >
                     </input>
                 </label>
                 <br />
