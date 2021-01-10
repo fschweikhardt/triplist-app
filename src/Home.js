@@ -85,7 +85,7 @@ export default class Home extends React.Component {
         <TripListContext.Provider value={value}>
             <div>
                 <header>
-                    TripList Home Page
+                    TripList
                 </header>
                 <main>
                     <h1>
