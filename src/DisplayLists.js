@@ -38,7 +38,7 @@ export default class DisplayLists extends React.Component {
                <br />
                <form onSubmit={this.handleAddList}>
                     <label htmlFor='newList'>
-                        new item
+                        CREATE NEW LIST
                         <input
                             type='text'
                             name='newList'
@@ -48,7 +48,7 @@ export default class DisplayLists extends React.Component {
                     </label>
                     <button
                         type='submit'>
-                        Create New List
+                        SUBMIT
                     </button>
                 </form>
             </div>
