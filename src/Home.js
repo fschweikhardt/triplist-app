@@ -20,10 +20,9 @@ export default class Home extends React.Component {
 
     handleAddItem = (item, listId) => {
         console.log('addItem on home.js', item, listId)
-        let id = uuidv4()
         let newItem = {
             name: item,
-            itemId: id,
+            itemId: uuidv4(),
             listId: listId 
         }
         this.setState({
@@ -39,13 +38,25 @@ export default class Home extends React.Component {
         })
     }
 
+    handleAddList = (newList) => {
+        console.log(newList)
+        let list = {
+            id: uuidv4(),
+            title: newList
+        }
+        this.setState({
+            lists: [...this.state.lists, list]
+        })
+    }
+
     render() {
         const value = {
             lists: this.state.lists,
             items: this.state.items,
             username: this.state.username,
             addItem: this.handleAddItem, 
-            deleteItem: this.handleDeleteItem
+            deleteItem: this.handleDeleteItem, 
+            addList: this.handleAddList
         }
 
         console.log(this.state.lists)

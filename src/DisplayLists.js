@@ -6,9 +6,17 @@ export default class DisplayLists extends React.Component {
 
     static contextType = TripListContext
 
+    handleAddList = (e) => {
+        e.preventDefault()
+        console.log('add list on List.js', e.target.newList.value)
+        this.context.addList(e.target.newList.value)
+        e.target.reset()
+    }
+
     render() {
-        console.log('DisplayList', this.context.lists, this.context.items)
-    
+
+        console.log(this.context)
+       
         return (
             <div>
                 <h2>
@@ -30,9 +38,21 @@ export default class DisplayLists extends React.Component {
                </ul>
                <br/>
                <br />
-               <button>
-                   ADD LIST
-               </button>
+               <form onSubmit={this.handleAddList}>
+                    <label htmlFor='newList'>
+                        new item
+                        <input
+                            type='text'
+                            name='newList'
+                            id='newList'
+                            required
+                        />
+                    </label>
+                    <button
+                        type='submit'>
+                        Create New List
+                    </button>
+                </form>
             </div>
         )
     } 

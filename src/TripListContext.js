@@ -5,7 +5,8 @@ const TripListContext = React.createContext({
     items: [],
     username: '',
     addItem: () => {}, 
-    deleteItem: () => {}
+    deleteItem: () => {}, 
+    addList: () => {}
 })
 
 export default TripListContext

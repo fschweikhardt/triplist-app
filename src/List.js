@@ -33,10 +33,6 @@ export default class List extends React.Component {
         console.log('delete list on list.js')
     }
 
-    handleAddList = () => {
-        console.log('add list on List.js')
-    }
-
     render() {
 
         const list = this.props.id
