@@ -66,7 +66,7 @@ export default class Home extends React.Component {
     }
 
     render() {
-        const { username } = this.props
+        //const { username } = this.props
         
         const value = {
             lists: this.state.lists,
@@ -89,7 +89,7 @@ export default class Home extends React.Component {
                 </header>
                 <main>
                     <h1>
-                        Hello, {username}
+                         Hello! {/*, {username} */}
                     </h1>
                     <DisplayLists />
                 </main>

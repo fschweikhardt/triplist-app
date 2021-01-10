@@ -18,7 +18,7 @@ export default class DisplayLists extends React.Component {
         return (
             <div>
                 <h2>
-                    Lists
+                    Lists of places to go
                 </h2>
                <ul>
                    {this.context.lists.map( list => {

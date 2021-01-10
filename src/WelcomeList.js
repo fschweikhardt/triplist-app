@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function WelcomeList() { 
+export default function WelcomeList(props) { 
     return (
         <div>
                 <section>

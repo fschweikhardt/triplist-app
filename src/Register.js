@@ -3,12 +3,18 @@ import './App.css'
 import { Link } from 'react-router-dom'
 
 export default class Register extends React.Component{
-    // constructor(props) {
-    //     super(props)
-    // }
+    constructor(props) {
+        super(props)
+        this.state = {
+            username: ''
+        }
+    }
 
-    state = {
-        updateUsername: ''
+    setUsername = (e) => {
+        this.setState({
+            username: e.target.value
+        })
+        this.props.getUsername(this.state.username)
     }
 
     handleSubmit = (e) => {
@@ -17,7 +23,16 @@ export default class Register extends React.Component{
         console.log(e.target.password.value)
     }
 
+    // componentDidMount() {
+    //     this.props.getUsername(this.state.username)
+    // }
+
+    // componentWillUnmount() {}
+
     render() {
+
+        //this.props.getUsername(this.state.username)
+
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
@@ -36,7 +51,7 @@ export default class Register extends React.Component{
                         type='text'
                         id='username'
                         name='username'
-                        onChange={()=>this.props.getUsername("jake")}>
+                        onChange={this.setUsername}>
                     </input>
                 </label>
                 <br />
@@ -57,9 +72,9 @@ export default class Register extends React.Component{
                     </Link>
                 </button>
                 <br />    
-                <button>
+                {/* <button>
                     Cancel
-                </button>  
+                </button>   */}
                 </form>
             </div>
         )

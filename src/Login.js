@@ -1,7 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './App.css'
 
-export default function Login() {
+export default function Login(props) {
 
     return (
         <div>
@@ -20,13 +21,17 @@ export default function Login() {
                 </input>
             </label>
             <br />
-            <button>
+            <button
+                type='submit'>
+                <Link to='/home'>
                 Log In
+                </Link>
             </button>
             <br />    
-            <button>
-                Cancel
-            </button>  
+            {/* <button
+                onClick={props.history.push('/')}>
+                GO BACK
+            </button>  */}
         </div>
     )
 }

@@ -33,12 +33,12 @@ export default {
             listId: 1
         },
         {
-            name: "camping",
+            name: "camping in Oregon",
             itemId: uuidv4(),
             listId: 2
         },
         {
-            name: "swimming",
+            name: "hiking the AT",
             itemId: uuidv4(),
             listId: 2
         },

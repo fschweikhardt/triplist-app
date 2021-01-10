@@ -13,17 +13,15 @@ class App extends React.Component {
       }
     }
   
-
-  
-
   handleGetUsername = (username) => {
     console.log(username)
     this.setState({
-      username: username
+      username
     })
   }
 
   render() {
+    console.log(this.state.username)
 
     return (
       <div className="App">
