@@ -7,7 +7,7 @@ export default class DisplayLists extends React.Component {
     static contextType = TripListContext
 
     render() {
-        console.log('DisplayList', this.context.lists)
+        console.log('DisplayList', this.context.lists, this.context.items)
     
         return (
             <div>
@@ -18,12 +18,10 @@ export default class DisplayLists extends React.Component {
                    {this.context.lists.map( list => {
                        return (
                            <li key={list.id}>
-                               {list.id}{list.title}
                                <hr />
                                <List
                                     id={list.id}
                                     title={list.title}
-                                    items={list.items}
                                 />
                                 <hr />
                            </li>

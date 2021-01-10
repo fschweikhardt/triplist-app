@@ -9,7 +9,7 @@ export default function Login() {
                 Log in
             </h2>
             <label>
-                email
+                username
                 <input>
                 </input>
             </label>

@@ -1,8 +1,10 @@
 import React from 'react'
 import './App.css'
+import { v4 as uuidv4 } from 'uuid'
 import TripListContext from './TripListContext'
 import STORE from './STORE'
 import DisplayLists from './DisplayLists'
+
 
 export default class Home extends React.Component {
 
@@ -10,33 +12,44 @@ export default class Home extends React.Component {
 
     state = {
         //loggedin: false, 
-        lists: STORE,
+        lists: STORE.lists,
+        items: STORE.items,
         username: 'John Doe', 
         newItem: ''
       }
 
-    handleAddItem = (item) => {
-        console.log('addItem on home.js', item)
-        const newItems = this.state.lists[0].items
+    handleAddItem = (item, listId) => {
+        console.log('addItem on home.js', item, listId)
+        let id = uuidv4()
+        let newItem = {
+            name: item,
+            itemId: id,
+            listId: listId 
+        }
         this.setState({
-            lists: [...newItems, item]
+            items: [...this.state.items, newItem]
         })
     }
 
-    handleDeleteItem = (listId, itemId) => {
-        console.log('delete item on home.js', listId, itemId)
+    handleDeleteItem = (itemId) => {
+        console.log('delete item on home.js', itemId)
+        const removedItem = this.state.items.filter( itm => itm.itemId !== itemId)
+        this.setState({
+            items: removedItem
+        })
     }
 
     render() {
         const value = {
             lists: this.state.lists,
+            items: this.state.items,
             username: this.state.username,
             addItem: this.handleAddItem, 
             deleteItem: this.handleDeleteItem
         }
 
         console.log(this.state.lists)
-        //console.log(this.state.newItem)
+        console.log(this.state.items)
         //const testItems = this.state.lists[0].items
         //console.log([...testItems, 'test'])
 

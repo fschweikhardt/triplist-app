@@ -6,7 +6,7 @@ export default class List extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            hide: false
+            hide: true
         }
     }
 
@@ -17,25 +17,31 @@ export default class List extends React.Component {
             hide: !prevState.hide
         }))
 
-    handleAddItem = (e) => {
+    handleAddItem = (e, listId) => {
         e.preventDefault()
-        console.log(e.target.newItem.value)
-        this.context.addItem(e.target.newItem.value)
+        console.log(e.target.newItem.value, listId)
+        this.context.addItem(e.target.newItem.value, listId)
+        e.target.reset()
     }
 
-    handleDeleteItem = (listId, itemId) => {
-        console.log('delete item on list.js', listId, itemId)
-        this.context.deleteItem(listId, itemId)
+    handleDeleteItem = (itemId) => {
+        console.log('delete item on list.js', itemId)
+        this.context.deleteItem(itemId)
     }
 
     handleDeleteList = () => {
         console.log('delete list on list.js')
     }
 
+    handleAddList = () => {
+        console.log('add list on List.js')
+    }
+
     render() {
-        console.log(this.props.items)
-       // const listId = this.props.title
-        //console.log(this.context.lists[0].id)
+
+        const list = this.props.id
+        const items = this.context.items
+        const itemsToList = items.filter( i => i.listId === list)
 
         const hidden = 
             <div>
@@ -63,16 +69,13 @@ export default class List extends React.Component {
                 </h3>
 
                 <ul>
-                    {this.props.items.map( (item, i) => {
-                        const itemKey = this.props.id + `${this.props.title}` + i
-                        const itemId = i
+                    {itemsToList.map( (item ) => {
                         return (
-                            <li key={itemKey}>
-                                {itemKey}
+                            <li key={item.itemId}>
                                 <br />
                                 <Item
-                                    item={item} 
-                                    id={itemKey}
+                                    name={item.name} 
+                                    id={item.itemId}
                                 />
                                 {/* <button>
                                     edit
@@ -83,7 +86,7 @@ export default class List extends React.Component {
                                     id='deleteItem'
                                     //listId={this.props.id}
                                     //value={itemId}
-                                    onClick={(e)=> this.handleDeleteItem(this.props.id, itemId)}
+                                    onClick={()=> this.handleDeleteItem(item.itemId)}
                                 >
                                     delete
                                 </button>
@@ -93,14 +96,14 @@ export default class List extends React.Component {
                         })}
                 </ul>
                 <br />
-
-                <form onSubmit={this.handleAddItem}>
+                <form onSubmit={(e)=>this.handleAddItem(e, this.props.id)}>
                     <label htmlFor='newItem'>
                         new item
                         <input
                             type='text'
                             name='newItem'
                             id='newItem'
+                            required
                         />
                     </label>
                     <button

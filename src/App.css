@@ -21,6 +21,10 @@ header {
   padding-bottom: 10px;
 }
 
+button {
+  margin: 15px;
+}
+
 /* <-- fonts --> */
 
 h1, h2, h3, p, a, ul, li {
