@@ -29,8 +29,9 @@ export default class List extends React.Component {
         this.context.deleteItem(itemId)
     }
 
-    handleDeleteList = () => {
-        console.log('delete list on list.js')
+    handleDeleteList = (list) => {
+        console.log('delete list on list.js', list)
+        this.context.deleteList(list)
     }
 
     render() {
@@ -111,7 +112,7 @@ export default class List extends React.Component {
                 <br />
                 <br />
                 <button
-                    onClick={this.handleDeleteList}>
+                    onClick={()=>this.handleDeleteList(this.props.id)}>
                     Delete list
                 </button>
                 <br />

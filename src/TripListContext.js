@@ -3,10 +3,10 @@ import React from 'react'
 const TripListContext = React.createContext({
     lists: [],
     items: [],
-    username: '',
     addItem: () => {}, 
     deleteItem: () => {}, 
-    addList: () => {}
+    addList: () => {}, 
+    deleteList: () => {}
 })
 
 export default TripListContext

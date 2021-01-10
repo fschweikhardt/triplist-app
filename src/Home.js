@@ -7,16 +7,23 @@ import DisplayLists from './DisplayLists'
 
 
 export default class Home extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            //loggedin: false, 
+            lists: STORE.lists,
+            items: STORE.items,
+          }
+    }
 
     static contextType = TripListContext
-
-    state = {
-        //loggedin: false, 
-        lists: STORE.lists,
-        items: STORE.items,
-        username: 'John Doe', 
-        newItem: ''
-      }
+    
+    handleUpdateUsername = (username) => {
+        console.log(username)
+        this.setState({
+            username: username
+        })
+    }
 
     handleAddItem = (item, listId) => {
         console.log('addItem on home.js', item, listId)
@@ -49,20 +56,29 @@ export default class Home extends React.Component {
         })
     }
 
+    handleDeleteList = (list) => {
+        console.log(list)
+        let newList = this.state.lists.filter( lst => lst.id !== list)
+        console.log(newList)
+        this.setState({
+            lists: newList
+        })
+    }
+
     render() {
+        const { username } = this.props
+        
         const value = {
             lists: this.state.lists,
             items: this.state.items,
-            username: this.state.username,
             addItem: this.handleAddItem, 
             deleteItem: this.handleDeleteItem, 
-            addList: this.handleAddList
+            addList: this.handleAddList, 
+            deleteList: this.handleDeleteList
         }
 
         console.log(this.state.lists)
         console.log(this.state.items)
-        //const testItems = this.state.lists[0].items
-        //console.log([...testItems, 'test'])
 
     return (
 
@@ -73,7 +89,7 @@ export default class Home extends React.Component {
                 </header>
                 <main>
                     <h1>
-                        Hello, {this.state.username}
+                        Hello, {username}
                     </h1>
                     <DisplayLists />
                 </main>

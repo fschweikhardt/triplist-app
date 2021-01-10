@@ -7,23 +7,39 @@ import Home from './Home'
 
 class App extends React.Component {
 
+  state = {
+    username: 'cowboy'
+  }
+
+  handleGetUsername = (username) => {
+    this.setState({
+      username
+    })
+  }
+
   render() {
 
     return (
       <div className="App">
         <Switch>
+          
           <Route 
             exact path='/'
             component={LandingPage}
           />
-          <Route
-            path='/welcome'
-            component={Welcome}
-          />
-          <Route 
-            path='/home'
-            component={Home}
-          />
+
+          <Route path='/welcome'>
+            <Welcome 
+              getUsername={this.handleGetUsername}
+            />
+          </Route>
+
+          <Route path='/home' >
+            <Home 
+              username={this.state.username}
+            />
+          </Route>
+
         </Switch>
       </div>
     )

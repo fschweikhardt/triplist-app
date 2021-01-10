@@ -15,8 +15,6 @@ export default class DisplayLists extends React.Component {
 
     render() {
 
-        console.log(this.context)
-       
         return (
             <div>
                 <h2>
