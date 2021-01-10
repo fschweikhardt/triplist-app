@@ -6,7 +6,7 @@ export default function LandingPage() {
     return (
       <div className="App">
         <header className="Header">
-          Trip List / Trippa 
+          TripList
         </header>
           <main>
             <h1>
@@ -15,12 +15,9 @@ export default function LandingPage() {
             <Link to='/welcome'>
                 GET STARTED
             </Link>
-            <p>The locations can be saved with different catagories: with partner, with in-laws, with friends.
+            <p>Create different travel lists for your different types of trips. (eg. with partner, with in-laws, with friends)
             </p>
             <br />
-            <p>
-               You could tag media/links into the saved locations to have a central place for local attractions, accommodation, restaurants. 
-            </p>
           </main>
       </div>
     )
