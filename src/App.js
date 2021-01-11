@@ -1,11 +1,11 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
+import TripListContext from './TripListContext'
 import './App.css'
 import LandingPage from './LandingPage'
 import Welcome from './Welcome'
 import Home from './Home'
 import { v4 as uuidv4 } from 'uuid'
-import TripListContext from './TripListContext'
 import STORE from './STORE'
 
 class App extends React.Component {

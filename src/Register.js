@@ -1,39 +1,46 @@
 import React from 'react'
 import './App.css'
 //import { Link } from 'react-router-dom'
+import TripListContext from './TripListContext'
+import config from './config'
 
 export default class Register extends React.Component{
-    // constructor(props) {
-    //     super(props)
-    //     // this.state = {
-    //     //     username: ''
-    //     // }
-    // }
 
-    // setUsername = (e) => {
-    //     this.setState({
-    //         username: e.target.value
-    //     })
-    //     this.props.getUsername(this.state.username)
-    // }
+    static contextType = TripListContext
 
     handleSubmit = (e) => {
         e.preventDefault()
-        console.log(e.target.username.value)
-        console.log(e.target.password.value)
         this.props.getUsername(e.target.username.value)
-        //this.props.history.goBack()
+
+        const newUser = {
+            email: e.target.email.value,
+            username: e.target.username.value,
+            password: e.target.password.value
+        }
+
+        const options = {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                //'Authorization': `Bearer ${config.API_TOKEN}` 
+            },
+            body: JSON.stringify(newUser)
+        }
+
+        fetch(`${config.API_ENDPOINT}/users`, options)
+            .then(res => {
+                if (!res.ok) {
+                    return res.json().then(e => Promise.reject(e))
+                }
+                return res.json()
+            })
+            //.then(this.props.history.push('/welcome/login'))
+            .catch(error => {
+                console.error({ error })
+            }) 
     }
 
-    // componentDidMount() {
-    //     this.props.getUsername(this.state.username)
-    // }
-
-    // componentWillUnmount() {}
-
     render() {
-
-        //this.props.getUsername(username.value)
 
         return (
             <div>
@@ -43,7 +50,10 @@ export default class Register extends React.Component{
                 </h2>
                 <label>
                     email
-                    <input>
+                    <input
+                        type='text'
+                        id='email'
+                        name='email'>
                     </input>
                 </label>
                 <br />
@@ -53,7 +63,6 @@ export default class Register extends React.Component{
                         type='text'
                         id='username'
                         name='username'
-                        onChange={this.setUsername}
                         >
                     </input>
                 </label>
@@ -69,11 +78,9 @@ export default class Register extends React.Component{
                 </label>
                 <br />
                 <button
-                    type='submit'>
-                    {/* <Link to='/home'>
-                    Create Account
-                    </Link> */}
-                Submit
+                    type='submit'
+                >
+                    Submit
                 </button>
                 <br />    
                 <button>
