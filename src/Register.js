@@ -13,9 +13,9 @@ export default class Register extends React.Component{
         this.props.getUsername(e.target.username.value)
 
         const newUser = {
-            email: e.target.email.value,
             username: e.target.username.value,
-            password: e.target.password.value
+            password: e.target.password.value,
+            email: e.target.email.value
         }
 
         const options = {
@@ -38,6 +38,8 @@ export default class Register extends React.Component{
             .catch(error => {
                 console.error({ error })
             }) 
+
+        e.target.reset()
     }
 
     render() {
