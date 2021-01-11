@@ -1,26 +1,28 @@
 import React from 'react'
 import './App.css'
-import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
 
 export default class Register extends React.Component{
-    constructor(props) {
-        super(props)
-        this.state = {
-            username: ''
-        }
-    }
+    // constructor(props) {
+    //     super(props)
+    //     // this.state = {
+    //     //     username: ''
+    //     // }
+    // }
 
-    setUsername = (e) => {
-        this.setState({
-            username: e.target.value
-        })
-        this.props.getUsername(this.state.username)
-    }
+    // setUsername = (e) => {
+    //     this.setState({
+    //         username: e.target.value
+    //     })
+    //     this.props.getUsername(this.state.username)
+    // }
 
     handleSubmit = (e) => {
         e.preventDefault()
         console.log(e.target.username.value)
         console.log(e.target.password.value)
+        this.props.getUsername(e.target.username.value)
+        this.props.history.goBack()
     }
 
     // componentDidMount() {
@@ -31,7 +33,7 @@ export default class Register extends React.Component{
 
     render() {
 
-        //this.props.getUsername(this.state.username)
+        //this.props.getUsername(username.value)
 
         return (
             <div>
@@ -51,7 +53,8 @@ export default class Register extends React.Component{
                         type='text'
                         id='username'
                         name='username'
-                        onChange={this.setUsername}>
+                        onChange={this.setUsername}
+                        >
                     </input>
                 </label>
                 <br />
@@ -67,14 +70,15 @@ export default class Register extends React.Component{
                 <br />
                 <button
                     type='submit'>
-                    <Link to='/home'>
+                    {/* <Link to='/home'>
                     Create Account
-                    </Link>
+                    </Link> */}
+                Submit
                 </button>
                 <br />    
-                {/* <button>
+                <button>
                     Cancel
-                </button>   */}
+                </button>  
                 </form>
             </div>
         )

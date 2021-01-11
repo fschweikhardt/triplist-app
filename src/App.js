@@ -12,6 +12,10 @@ class App extends React.Component {
         username: ''
       }
     }
+
+      // state = {
+      //     username: ''
+      // }
   
   handleGetUsername = (username) => {
     console.log(username)

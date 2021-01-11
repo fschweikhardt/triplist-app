@@ -28,10 +28,10 @@ export default function Login(props) {
                 </Link>
             </button>
             <br />    
-            {/* <button
-                onClick={props.history.push('/')}>
+            <button
+                onClick={()=>props.history.push('/')}>
                 GO BACK
-            </button>  */}
+            </button> 
         </div>
     )
 }
