@@ -22,7 +22,7 @@ export default class Register extends React.Component{
         console.log(e.target.username.value)
         console.log(e.target.password.value)
         this.props.getUsername(e.target.username.value)
-        this.props.history.goBack()
+        //this.props.history.goBack()
     }
 
     // componentDidMount() {
