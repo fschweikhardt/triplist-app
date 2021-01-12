@@ -7,6 +7,36 @@ export default class Login extends React.Component {
 
     static contextType = TripListContext
 
+    componentDidMount() {
+        console.log("component did mount")
+        const user = { username: this.context.username }
+        
+        const options = {
+          method: 'POST', 
+          headers: {
+            'content-type': 'application/json',
+          //'Authorization': `Bearer ${usernameLogin}:${passwordLogin}` 
+          },
+          body: JSON.stringify(user)
+        }
+        fetch(`${config.API_ENDPOINT}/userList`, options)
+          .then(res => {
+            if (!res.ok) {
+                return res.json().then(e => Promise.reject(e))
+            }
+            return res.json()
+          })
+          
+          .then( res => {
+            this.setState({
+              lists: res
+            }) 
+          })
+          .then(res => console.log(res))
+          .then(console.log('end of mount'))
+      }
+
+      
     handleSubmit = (e) => {
         e.preventDefault()
 
@@ -36,12 +66,13 @@ export default class Login extends React.Component {
                 console.log(username)
                 //this.props.history.push('/home')
             })
-            //.then ( res => console.log(res))
             .catch(error => {
                 console.error({ error })
             }) 
 
         e.target.reset()
+
+        
     }
 
     render() {

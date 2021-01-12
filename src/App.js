@@ -7,30 +7,22 @@ import Welcome from './Welcome'
 import Home from './Home'
 import config from './config'
 import { v4 as uuidv4 } from 'uuid'
-//import STORE from './STORE'
+import STORE from './STORE'
 
 class App extends React.Component {
  
     state = {
         //loggedin: false, 
         username: 'guest',
-        lists: '',
-        //items: STORE.items,
+        lists: STORE.lists,
+        items: STORE.items,
     }
 
   static contextType = TripListContext
 
-
-  handleSetUsername = (username) => {
-    const getName = username[0]
-    const usernameValue = Object.values(getName)
-    this.setState({
-      username: usernameValue
-    })
-  }
-
   componentDidMount() {
     console.log("component did mount")
+    const user = { username: this.state.username}
     
     const options = {
       method: 'POST', 
@@ -38,9 +30,8 @@ class App extends React.Component {
         'content-type': 'application/json',
       //'Authorization': `Bearer ${usernameLogin}:${passwordLogin}` 
       },
-      body: JSON.stringify(this.state.username)
+      body: JSON.stringify(user)
     }
-    console.log(this.state.username)
     fetch(`${config.API_ENDPOINT}/userList`, options)
       .then(res => {
         if (!res.ok) {
@@ -48,10 +39,25 @@ class App extends React.Component {
         }
         return res.json()
       })
+      
+      .then( res => {
+        this.setState({
+          lists: res
+        }) 
+      })
       .then(res => console.log(res))
-    //   .then( lists => {
-    //     this.setState({lists});
-    // })
+      .then(console.log('end of mount'))
+  }
+
+  handleSetUsername = (username) => {
+    console.log(username)
+    const getName = username[0]
+    const usernameValue = Object.values(getName)
+    const nameString = usernameValue.toString()
+    console.log(nameString)
+    this.setState({
+      username: nameString
+    })
   }
 
   handleAddItem = (item, listId) => {
@@ -109,7 +115,7 @@ class App extends React.Component {
 
     console.log(this.state.username)
     console.log(this.state.lists)
-    //console.log(this.state.items)
+    console.log(this.state.items)
     
     return (
       <TripListContext.Provider value={value}>
