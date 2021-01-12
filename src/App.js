@@ -5,26 +5,53 @@ import './App.css'
 import LandingPage from './LandingPage'
 import Welcome from './Welcome'
 import Home from './Home'
+import config from './config'
 import { v4 as uuidv4 } from 'uuid'
-import STORE from './STORE'
+//import STORE from './STORE'
 
 class App extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
+ 
+    state = {
         //loggedin: false, 
-        username: '',
-        lists: STORE.lists,
-        items: STORE.items,
+        username: 'guest',
+        lists: '',
+        //items: STORE.items,
     }
-  }
 
   static contextType = TripListContext
 
-  handleGetUsername = (username) => {
+
+  handleSetUsername = (username) => {
+    const getName = username[0]
+    const usernameValue = Object.values(getName)
     this.setState({
-      username
+      username: usernameValue
     })
+  }
+
+  componentDidMount() {
+    console.log("component did mount")
+    
+    const options = {
+      method: 'POST', 
+      headers: {
+        'content-type': 'application/json',
+      //'Authorization': `Bearer ${usernameLogin}:${passwordLogin}` 
+      },
+      body: JSON.stringify(this.state.username)
+    }
+    console.log(this.state.username)
+    fetch(`${config.API_ENDPOINT}/userList`, options)
+      .then(res => {
+        if (!res.ok) {
+            return res.json().then(e => Promise.reject(e))
+        }
+        return res.json()
+      })
+      .then(res => console.log(res))
+    //   .then( lists => {
+    //     this.setState({lists});
+    // })
   }
 
   handleAddItem = (item, listId) => {
@@ -70,6 +97,7 @@ class App extends React.Component {
   render() {
 
     const value = {
+      setUsername: this.handleSetUsername,
       username: this.state.username,
       lists: this.state.lists,
       items: this.state.items,
@@ -81,7 +109,7 @@ class App extends React.Component {
 
     console.log(this.state.username)
     console.log(this.state.lists)
-    console.log(this.state.items)
+    //console.log(this.state.items)
     
     return (
       <TripListContext.Provider value={value}>
@@ -93,15 +121,15 @@ class App extends React.Component {
               component={LandingPage}
             />
 
-            <Route path='/welcome'>
-              <Welcome 
-                getUsername={this.handleGetUsername}
-              />
-            </Route>
+            <Route 
+              path='/welcome'
+              component={Welcome} 
+            />
 
-            <Route path='/home' >
-              <Home />
-            </Route>
+            <Route 
+              path='/home' 
+              component={Home}
+            />
 
           </Switch>
         </div>

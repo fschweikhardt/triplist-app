@@ -6,7 +6,7 @@ import WelcomeList from './WelcomeList'
 import Login from './Login'
 import Register from './Register'
 
-export default function Welcome(props) {
+export default function Welcome() {
     return (
        
         <div>
@@ -17,15 +17,11 @@ export default function Welcome(props) {
                 </Route>
 
                 <Route path='/welcome/login'>
-                    <Login 
-                        getUsername={props.getUsername}
-                    />
+                    <Login />
                 </Route>
 
                 <Route path='/welcome/register'>
-                    <Register 
-                        getUsername={props.getUsername}
-                    />
+                    <Register />
                 </Route>
 
             </Switch>

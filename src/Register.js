@@ -10,7 +10,7 @@ export default class Register extends React.Component{
 
     handleSubmit = (e) => {
         e.preventDefault()
-        this.props.getUsername(e.target.username.value)
+       // this.props.getUsername(e.target.username.value)
 
         const newUser = {
             username: e.target.username.value,

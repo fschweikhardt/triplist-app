@@ -1,6 +1,6 @@
 import React from 'react'
 import TripListContext from './TripListContext'
-import List from './List'
+//import List from './List'
 
 export default class DisplayLists extends React.Component {
 
@@ -20,7 +20,7 @@ export default class DisplayLists extends React.Component {
                 <h2>
                     Lists of places to go
                 </h2>
-               <ul>
+               {/* <ul>
                    {this.context.lists.map( list => {
                        return (
                            <li key={list.id}>
@@ -33,7 +33,7 @@ export default class DisplayLists extends React.Component {
                            </li>
                        )
                    })}
-               </ul>
+               </ul> */}
                <br/>
                <br />
                <form onSubmit={this.handleAddList}>

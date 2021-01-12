@@ -1,8 +1,11 @@
 import React from 'react'
 import './App.css'
-//import config from './config'
+import config from './config'
+import TripListContext from './TripListContext'
 
 export default class Login extends React.Component {
+
+    static contextType = TripListContext
 
     handleSubmit = (e) => {
         e.preventDefault()
@@ -12,34 +15,33 @@ export default class Login extends React.Component {
             password: e.target.password.value
         }
 
-        // const usernameLogin = 'tony'
-        // const passwordLogin = 'asdf'
+        const options = {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                //'Authorization': `Bearer ${usernameLogin}:${passwordLogin}` 
+            },
+            body: JSON.stringify(userLogin)
+        }
 
-        //const { username, password } = e.target.value
+        fetch(`${config.API_ENDPOINT}/user`, options)
+            .then(res => {
+                if (!res.ok) {
+                    return res.json().then(e => Promise.reject(e))
+                }
+                return res.json()
+            })
+            .then( username => {
+                this.context.setUsername(username)
+                console.log(username)
+                //this.props.history.push('/home')
+            })
+            //.then ( res => console.log(res))
+            .catch(error => {
+                console.error({ error })
+            }) 
 
-        console.log(userLogin.username)
-
-        // const options = {
-        //     method: 'GET',
-        //     headers: {
-        //         'content-type': 'application/json',
-        //         //'Authorization': `Bearer ${usernameLogin}:${passwordLogin}` 
-        //     },
-        //     body: JSON.stringify(newUser)
-        // }
-
-        // fetch(`${config.API_ENDPOINT}/users`, options)
-        //     .then(res => {
-        //         if (!res.ok) {
-        //             return res.json().then(e => Promise.reject(e))
-        //         }
-        //         return res.json()
-        //     })
-        //     .catch(error => {
-        //         console.error({ error })
-        //     }) 
-
-        // e.target.reset()
+        e.target.reset()
     }
 
     render() {
