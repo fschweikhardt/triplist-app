@@ -13,7 +13,7 @@ class App extends React.Component {
  
     state = {
         //loggedin: false, 
-        username: 'guest',
+        username: '',
         lists: STORE.lists,
         items: STORE.items,
     }
@@ -29,10 +29,8 @@ class App extends React.Component {
     this.setState({
       username: nameString
     })
-  }
 
-  componentDidMount() {
-    console.log("component did mount")
+    console.log("username set...get lsits")
     const user = { username: this.state.username}
     
     const options = {
@@ -58,7 +56,10 @@ class App extends React.Component {
       })
       .then(res => console.log(res))
       .then(console.log('end of mount'))
+  
   }
+
+  
 
   handleAddItem = (item, listId) => {
       console.log('addItem on home.js', item, listId)
