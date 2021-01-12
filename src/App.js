@@ -20,6 +20,17 @@ class App extends React.Component {
 
   static contextType = TripListContext
 
+  handleSetUsername = (username) => {
+    console.log(username)
+    const getName = username[0]
+    const usernameValue = Object.values(getName)
+    const nameString = usernameValue.toString()
+    console.log(nameString)
+    this.setState({
+      username: nameString
+    })
+  }
+
   componentDidMount() {
     console.log("component did mount")
     const user = { username: this.state.username}
@@ -47,17 +58,6 @@ class App extends React.Component {
       })
       .then(res => console.log(res))
       .then(console.log('end of mount'))
-  }
-
-  handleSetUsername = (username) => {
-    console.log(username)
-    const getName = username[0]
-    const usernameValue = Object.values(getName)
-    const nameString = usernameValue.toString()
-    console.log(nameString)
-    this.setState({
-      username: nameString
-    })
   }
 
   handleAddItem = (item, listId) => {
