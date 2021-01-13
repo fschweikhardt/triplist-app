@@ -6,7 +6,7 @@ import LandingPage from './LandingPage'
 import Welcome from './Welcome'
 import Home from './Home'
 import config from './config'
-import { v4 as uuidv4 } from 'uuid'
+//import { v4 as uuidv4 } from 'uuid'
 //import STORE from './STORE'
 
 class App extends React.Component {
@@ -75,21 +75,13 @@ class App extends React.Component {
       })
       .then(res => console.log(res))
       .then(console.log('end of fetch for items'))
-  
-      
+    
   }
 
-  
-
-  handleAddItem = (item, listId) => {
-      console.log('addItem on home.js', item, listId)
-      let newItem = {
-          name: item,
-          itemId: uuidv4(),
-          listId: listId 
-      }
+  handleAddItem = (item) => {
+      console.log('addItem on home.js', item)
       this.setState({
-          items: [...this.state.items, newItem]
+          items: [...this.state.items, item]
       })
   }
 
@@ -102,19 +94,14 @@ class App extends React.Component {
   }
 
   handleAddList = (newList) => {
-      console.log(newList)
-      let list = {
-          id: uuidv4(),
-          title: newList,
-          username: this.state.username
-      }
+      console.log('addlist on app.js', newList)
       this.setState({
-          lists: [...this.state.lists, list]
+          lists: [...this.state.lists, newList]
       })
   }
 
   handleDeleteList = (list) => {
-      console.log(list)
+      console.log('delete list on app.js', list)
       let newList = this.state.lists.filter( lst => lst.id !== list)
       console.log(newList)
       this.setState({

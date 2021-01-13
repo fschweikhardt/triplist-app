@@ -1,6 +1,7 @@
 import React from 'react'
 import Item from './Item'
 import TripListContext from './TripListContext'
+import config from './config'
 
 export default class List extends React.Component { 
     constructor(props) {
@@ -17,11 +18,39 @@ export default class List extends React.Component {
             hide: !prevState.hide
         }))
 
-    handleAddItem = (e, listId) => {
+    handleAddItem = (e) => {
+        
         e.preventDefault()
-        console.log(e.target.newItem.value, listId)
-        this.context.addItem(e.target.newItem.value, listId)
+
+        const item = {
+            name: e.target.newItem.value,
+            list_id: this.props.id
+        }
+
+        const options = {
+            method: 'POST', 
+            headers: {
+                'content-type': 'application/json',
+              //'Authorization': `Bearer ${usernameLogin}:${passwordLogin}` 
+              },
+            body: JSON.stringify(item)
+        }
+        fetch(`${config.API_ENDPOINT}/items`, options)
+            .then(res => {
+                if (!res.ok) {
+                    return res.json().then(e => Promise.reject(e))
+                }
+                return res.json()
+            })
+            .then(res => console.log(res))
+            .then(this.context.addItem(item))
+        
         e.target.reset()
+    
+
+        // console.log(e.target.newItem.value, listId)
+        // this.context.addItem(e.target.newItem.value, listId)
+        // e.target.reset()
     }
 
     handleDeleteItem = (itemId) => {
@@ -30,8 +59,34 @@ export default class List extends React.Component {
     }
 
     handleDeleteList = (list) => {
-        console.log('delete list on list.js', list)
-        this.context.deleteList(list)
+        console.log('delete list on list.js', list, 'this.props.id=',this.props.id)
+        
+        
+        const deleteList = {
+            id: list
+        }
+        const options = { 
+            method: 'DELETE',
+            headers: {
+                'content-type': 'application/json',
+              //'Authorization': `Bearer ${usernameLogin}:${passwordLogin}` 
+              },
+            body: JSON.stringify(deleteList)
+        }
+        fetch(`${config.API_ENDPOINT}/lists`, options)
+            // .then(res => {
+            //     if (!res.ok) {
+            //         return res.json().then(e => Promise.reject(e))
+            //     }
+            //     return res.json()
+            // })
+            //.then(res => res.json('ok'))
+            //.then(res => console.log(res))
+            //.then(this.context.deleteList(list))
+            // .catch(error => {
+            //     console.error({ error })
+            // })
+            this.context.deleteList(list)
     }
 
     render() {
@@ -69,6 +124,7 @@ export default class List extends React.Component {
                     {itemsToList.map( (item ) => {
                         return (
                             <li key={item.item_id}>
+                                {item.item_id}
                                 <br />
                                 <Item
                                     name={item.name} 

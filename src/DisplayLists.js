@@ -11,7 +11,11 @@ export default class DisplayLists extends React.Component {
         e.preventDefault()
         console.log('add list on List.js', e.target.newList.value)
 
-        const newList = { title: e.target.newList.value}
+        const newList = { 
+            title: e.target.newList.value,
+            username: this.context.username
+        }
+
         const options = {
             method: 'POST', 
             headers: {
@@ -21,21 +25,20 @@ export default class DisplayLists extends React.Component {
             body: JSON.stringify(newList)
         }
         fetch(`${config.API_ENDPOINT}/lists`, options)
-        .then(res => {
-            if (!res.ok) {
-                return res.json().then(e => Promise.reject(e))
-            }
-            return res.json()
-          })
-        .then(res => {
-            this.context.add
-        }
+            .then(res => {
+                if (!res.ok) {
+                    return res.json().then(e => Promise.reject(e))
+                }
+                return res.json()
+            })
+            .then(res => console.log(res))
+            .then(this.context.addList(newList))
         
         e.target.reset()
     }
 
     render() {
-        console.log(this.context.lists)
+
         return (
             <div>
                 <h2>
@@ -46,6 +49,7 @@ export default class DisplayLists extends React.Component {
                    {this.context.lists.map( list => {
                        return (
                            <li key={list.id}>
+                               {list.id}
                                <hr />
                                <List
                                     id={list.id}
