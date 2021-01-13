@@ -1,6 +1,7 @@
 import React from 'react'
 import TripListContext from './TripListContext'
 import List from './List'
+import config from './config'
 
 export default class DisplayLists extends React.Component {
 
@@ -9,17 +10,38 @@ export default class DisplayLists extends React.Component {
     handleAddList = (e) => {
         e.preventDefault()
         console.log('add list on List.js', e.target.newList.value)
-        this.context.addList(e.target.newList.value)
+
+        const newList = { title: e.target.newList.value}
+        const options = {
+            method: 'POST', 
+            headers: {
+                'content-type': 'application/json',
+              //'Authorization': `Bearer ${usernameLogin}:${passwordLogin}` 
+              },
+            body: JSON.stringify(newList)
+        }
+        fetch(`${config.API_ENDPOINT}/lists`, options)
+        .then(res => {
+            if (!res.ok) {
+                return res.json().then(e => Promise.reject(e))
+            }
+            return res.json()
+          })
+        .then(res => {
+            this.context.add
+        }
+        
         e.target.reset()
     }
 
     render() {
-
+        console.log(this.context.lists)
         return (
             <div>
                 <h2>
                     Lists of places to go
-                </h2>
+                </h2>   
+                
                <ul>
                    {this.context.lists.map( list => {
                        return (
@@ -28,6 +50,7 @@ export default class DisplayLists extends React.Component {
                                <List
                                     id={list.id}
                                     title={list.title}
+                                    username={list.username}
                                 />
                                 <hr />
                            </li>

@@ -38,7 +38,7 @@ export default class List extends React.Component {
 
         const list = this.props.id
         const items = this.context.items
-        const itemsToList = items.filter( i => i.listId === list)
+        const itemsToList = items.filter( i => i.list_id === list)
 
         const hidden = 
             <div>
@@ -68,11 +68,11 @@ export default class List extends React.Component {
                 <ul>
                     {itemsToList.map( (item ) => {
                         return (
-                            <li key={item.itemId}>
+                            <li key={item.item_id}>
                                 <br />
                                 <Item
                                     name={item.name} 
-                                    id={item.itemId}
+                                    id={item.item_id}
                                 />
                                 {/* <button>
                                     edit

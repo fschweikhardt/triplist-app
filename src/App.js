@@ -7,20 +7,21 @@ import Welcome from './Welcome'
 import Home from './Home'
 import config from './config'
 import { v4 as uuidv4 } from 'uuid'
-import STORE from './STORE'
+//import STORE from './STORE'
 
 class App extends React.Component {
  
     state = {
         //loggedin: false, 
         username: '',
-        lists: STORE.lists,
-        items: STORE.items,
+        lists: '',
+        items: '',
     }
 
   static contextType = TripListContext
 
   handleSetUsername = (username) => {
+    //------> set username
     console.log(username)
     const getName = username[0]
     const usernameValue = Object.values(getName)
@@ -30,7 +31,9 @@ class App extends React.Component {
       username: nameString
     })
 
-    console.log("username set...get lsits")
+    //-----> get & set user lists
+
+    console.log("username set...get lists")
     const user = { username: this.state.username}
     
     const options = {
@@ -41,22 +44,39 @@ class App extends React.Component {
       },
       body: JSON.stringify(user)
     }
-    fetch(`${config.API_ENDPOINT}/userList`, options)
+    fetch(`${config.API_ENDPOINT}/userLists`, options)
       .then(res => {
         if (!res.ok) {
             return res.json().then(e => Promise.reject(e))
         }
         return res.json()
       })
-      
       .then( res => {
         this.setState({
           lists: res
         }) 
       })
       .then(res => console.log(res))
-      .then(console.log('end of mount'))
+      .then(console.log('end of fetch for lists'))
+
+      //-------> get & set user items
+
+      fetch(`${config.API_ENDPOINT}/userItems`, options)
+      .then(res => {
+        if (!res.ok) {
+            return res.json().then(e => Promise.reject(e))
+        }
+        return res.json()
+      })
+      .then( res => {
+        this.setState({
+          items: res
+        }) 
+      })
+      .then(res => console.log(res))
+      .then(console.log('end of fetch for items'))
   
+      
   }
 
   
@@ -85,7 +105,8 @@ class App extends React.Component {
       console.log(newList)
       let list = {
           id: uuidv4(),
-          title: newList
+          title: newList,
+          username: this.state.username
       }
       this.setState({
           lists: [...this.state.lists, list]
