@@ -87,6 +87,18 @@ class App extends React.Component {
       
   }
 
+  handleSetLists = (setLists) => {
+    this.setState({
+      lists: setLists
+    })
+  }
+
+  handleSetItems = (setItems) => {
+    this.setState({
+      lists: setItems
+    })
+  }
+
   handleAddItem = (item) => {
       console.log('addItem on home.js', item)
 
@@ -163,7 +175,9 @@ class App extends React.Component {
       setUsername: this.handleSetUsername,
       username: this.state.username,
       lists: this.state.lists,
+      setLists: this.handleSetLists,
       items: this.state.items,
+      setItems: this.handleSetItems,
       addItem: this.handleAddItem, 
       deleteItem: this.handleDeleteItem, 
       addList: this.handleAddList, 
