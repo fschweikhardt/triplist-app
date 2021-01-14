@@ -34,15 +34,20 @@ export default class Login extends React.Component {
             .then( username => {
                 this.context.setUsername(username)
                 console.log(username)
-                //this.props.history.push('/home')
+               // this.props.history.push('/home')
             })
             .catch(error => {
                 console.error({ error })
             }) 
 
-        e.target.reset()
-
         
+        e.target.reset()
+        const login = () => {
+            console.log("Ran login")
+            this.props.history.push('/home')
+          }
+          setInterval(login,100)
+       
     }
 
     render() {
@@ -77,7 +82,7 @@ export default class Login extends React.Component {
             </button>
             <br />    
             <button
-               // onClick={()=>props.history.push('/')}
+               onClick={()=>this.props.history.goBack()}
             >
                 GO BACK
             </button>

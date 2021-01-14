@@ -4,21 +4,30 @@ import TripListContext from './TripListContext'
 import './App.css'
 import LandingPage from './LandingPage'
 import Welcome from './Welcome'
+import Login from './Login'
+import Register from './Register'
 import Home from './Home'
+
 import config from './config'
 //import { v4 as uuidv4 } from 'uuid'
 //import STORE from './STORE'
 
 class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      //loggedin: false, 
+      username: '',
+      lists: '',
+      items: '',
+  }
+  }
  
-    state = {
-        //loggedin: false, 
-        username: '',
-        lists: '',
-        items: '',
-    }
+    
 
   static contextType = TripListContext
+
+  
 
   handleSetUsername = (username) => {
     //------> set username
@@ -74,15 +83,34 @@ class App extends React.Component {
         }) 
       })
       .then(res => console.log(res))
-      .then(console.log('end of fetch for items'))
-    
+      .then(console.log('end of fetch for items')) 
+      
   }
 
   handleAddItem = (item) => {
       console.log('addItem on home.js', item)
-      this.setState({
-          items: [...this.state.items, item]
-      })
+
+      const options = {
+        method: 'POST', 
+        headers: {
+            'content-type': 'application/json',
+          //'Authorization': `Bearer ${usernameLogin}:${passwordLogin}` 
+          },
+        body: JSON.stringify(item)
+    }
+    fetch(`${config.API_ENDPOINT}/items`, options)
+        .then(res => {
+            if (!res.ok) {
+                return res.json().then(e => Promise.reject(e))
+            }
+            return res.json()
+        })
+        .then(res => {
+            this.setState({
+              items: [...this.state.items, res]
+          })
+          console.log(res)
+        }) 
   }
 
   handleDeleteItem = (itemId) => {
@@ -95,9 +123,29 @@ class App extends React.Component {
 
   handleAddList = (newList) => {
       console.log('addlist on app.js', newList)
-      this.setState({
-          lists: [...this.state.lists, newList]
-      })
+      
+      const options = {
+        method: 'POST', 
+        headers: {
+            'content-type': 'application/json',
+          //'Authorization': `Bearer ${usernameLogin}:${passwordLogin}` 
+          },
+        body: JSON.stringify(newList)
+    }
+    fetch(`${config.API_ENDPOINT}/lists`, options)
+        .then(res => {
+            if (!res.ok) {
+                return res.json().then(e => Promise.reject(e))
+            }
+            return res.json()
+        })
+        .then(res => {
+            this.setState({
+              lists: [...this.state.lists, res]
+          })
+          console.log(res)
+        })
+      
   }
 
   handleDeleteList = (list) => {
@@ -141,6 +189,15 @@ class App extends React.Component {
               component={Welcome} 
             />
 
+            <Route 
+              path='/login' 
+              component={Login}
+            />
+
+            <Route 
+              path='/register' 
+              component={Register}
+            />
             <Route 
               path='/home' 
               component={Home}

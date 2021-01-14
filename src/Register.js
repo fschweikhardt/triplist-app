@@ -85,8 +85,9 @@ export default class Register extends React.Component{
                     Submit
                 </button>
                 <br />    
-                <button>
-                    Cancel
+                <button
+                    onClick={()=>this.props.history.goBack()}>
+                    GO BACK
                 </button>  
                 </form>
             </div>

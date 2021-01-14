@@ -16,11 +16,12 @@ export default function Welcome() {
                     <WelcomeList />
                 </Route>
 
-                <Route path='/welcome/login'>
-                    <Login />
-                </Route>
+                <Route 
+                    path='/login'
+                    component={Login}
+                />
 
-                <Route path='/welcome/register'>
+                <Route path='/register'>
                     <Register />
                 </Route>
 

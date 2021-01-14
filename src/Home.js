@@ -16,6 +16,13 @@ export default class Home extends React.Component {
                 <header>
                     TripList
                 </header>
+                <nav>
+                    <button
+                        onClick={()=>this.props.history.push('/')}
+                    >
+                        LOG OUT
+                    </button>
+                </nav>
                 <main>
                     <h1>
                          Hello! , {this.context.username}

@@ -27,25 +27,28 @@ export default class List extends React.Component {
             list_id: this.props.id
         }
 
-        const options = {
-            method: 'POST', 
-            headers: {
-                'content-type': 'application/json',
-              //'Authorization': `Bearer ${usernameLogin}:${passwordLogin}` 
-              },
-            body: JSON.stringify(item)
-        }
-        fetch(`${config.API_ENDPOINT}/items`, options)
-            .then(res => {
-                if (!res.ok) {
-                    return res.json().then(e => Promise.reject(e))
-                }
-                return res.json()
-            })
-            .then(res => console.log(res))
-            .then(this.context.addItem(item))
-        
+        this.context.addItem(item)
         e.target.reset()
+
+        // const options = {
+        //     method: 'POST', 
+        //     headers: {
+        //         'content-type': 'application/json',
+        //       //'Authorization': `Bearer ${usernameLogin}:${passwordLogin}` 
+        //       },
+        //     body: JSON.stringify(item)
+        // }
+        // fetch(`${config.API_ENDPOINT}/items`, options)
+        //     .then(res => {
+        //         if (!res.ok) {
+        //             return res.json().then(e => Promise.reject(e))
+        //         }
+        //         return res.json()
+        //     })
+        //     .then(res => console.log(res))
+        //     .then(this.context.addItem(item))
+        
+        
     
 
         // console.log(e.target.newItem.value, listId)

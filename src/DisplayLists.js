@@ -1,7 +1,7 @@
 import React from 'react'
 import TripListContext from './TripListContext'
 import List from './List'
-import config from './config'
+//import config from './config'
 
 export default class DisplayLists extends React.Component {
 
@@ -16,23 +16,26 @@ export default class DisplayLists extends React.Component {
             username: this.context.username
         }
 
-        const options = {
-            method: 'POST', 
-            headers: {
-                'content-type': 'application/json',
-              //'Authorization': `Bearer ${usernameLogin}:${passwordLogin}` 
-              },
-            body: JSON.stringify(newList)
-        }
-        fetch(`${config.API_ENDPOINT}/lists`, options)
-            .then(res => {
-                if (!res.ok) {
-                    return res.json().then(e => Promise.reject(e))
-                }
-                return res.json()
-            })
-            .then(res => console.log(res))
-            .then(this.context.addList(newList))
+        this.context.addList(newList)
+        e.target.reset()
+
+        // const options = {
+        //     method: 'POST', 
+        //     headers: {
+        //         'content-type': 'application/json',
+        //       //'Authorization': `Bearer ${usernameLogin}:${passwordLogin}` 
+        //       },
+        //     body: JSON.stringify(newList)
+        // }
+        // fetch(`${config.API_ENDPOINT}/lists`, options)
+        //     .then(res => {
+        //         if (!res.ok) {
+        //             return res.json().then(e => Promise.reject(e))
+        //         }
+        //         return res.json()
+        //     })
+        //     .then(res => console.log(res))
+        //     .then(this.context.addList(newList))
         
         e.target.reset()
     }

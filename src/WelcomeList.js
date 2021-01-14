@@ -42,7 +42,7 @@ export default class WelcomeList extends React.Component {
                 <section>
                     <h2>Log In</h2>
                     <button>
-                        <Link to='/welcome/login'>
+                        <Link to='/login'>
                             LOG IN
                         </Link>
                     </button>
@@ -51,7 +51,7 @@ export default class WelcomeList extends React.Component {
                 <section>
                     <h2>Register</h2>
                     <button>
-                        <Link to='/welcome/register'>
+                        <Link to='/register'>
                             REGISTER
                         </Link>
                     </button>
