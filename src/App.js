@@ -5,12 +5,9 @@ import './App.css'
 import LandingPage from './LandingPage'
 import Welcome from './Welcome'
 import Login from './Login'
-//import LoginUser from './LoginUser'
 import Register from './Register'
 import Home from './Home'
-
 import config from './config'
-//import { v4 as uuidv4 } from 'uuid'
 import STORE from './STORE'
 
 class App extends React.Component {
@@ -20,7 +17,7 @@ class App extends React.Component {
       username: STORE.username,
       lists: STORE.lists,
       items: STORE.items,
-      homePageTrigger: "this.props.history.push('/home')"
+     // homePageTrigger: "this.props.history.push('/home')"
     }
   }
 
@@ -110,40 +107,6 @@ class App extends React.Component {
 
   }
 
-  handleAddItem = (item) => {
-      console.log('addItem on home.js', item)
-
-      const options = {
-        method: 'POST', 
-        headers: {
-            'content-type': 'application/json',
-          //'Authorization': `Bearer ${usernameLogin}:${passwordLogin}` 
-          },
-        body: JSON.stringify(item)
-    }
-    fetch(`${config.API_ENDPOINT}/items`, options)
-        .then(res => {
-            if (!res.ok) {
-                return res.json().then(e => Promise.reject(e))
-            }
-            return res.json()
-        })
-        .then(res => {
-            this.setState({
-              items: [...this.state.items, res]
-          })
-          console.log(res)
-        }) 
-  }
-
-  handleDeleteItem = (item_id) => {
-      console.log('delete item on home.js', item_id)
-      const removedItem = this.state.items.filter( itm => itm.item_id !== item_id)
-      this.setState({
-          items: removedItem
-      })
-  }
-
   handleAddList = (newList) => {
       console.log('addlist on app.js', newList)
       
@@ -168,7 +131,6 @@ class App extends React.Component {
           })
           console.log(res)
         })
-      
   }
 
   handleDeleteList = (list) => {
@@ -180,6 +142,40 @@ class App extends React.Component {
       })
   }
 
+  handleAddItem = (item) => {
+    console.log('addItem on home.js', item)
+
+    const options = {
+      method: 'POST', 
+      headers: {
+          'content-type': 'application/json',
+        //'Authorization': `Bearer ${usernameLogin}:${passwordLogin}` 
+        },
+      body: JSON.stringify(item)
+  }
+    fetch(`${config.API_ENDPOINT}/items`, options)
+      .then(res => {
+          if (!res.ok) {
+              return res.json().then(e => Promise.reject(e))
+          }
+          return res.json()
+      })
+      .then(res => {
+          this.setState({
+            items: [...this.state.items, res]
+        })
+        console.log(res)
+      }) 
+}
+
+handleDeleteItem = (item_id) => {
+    console.log('delete item on home.js', item_id)
+    const removedItem = this.state.items.filter( itm => itm.item_id !== item_id)
+    this.setState({
+        items: removedItem
+    })
+}
+
   render() {
 
     const value = {
@@ -188,7 +184,7 @@ class App extends React.Component {
       lists: this.state.lists,
       setLists: this.handleSetLists,
       items: this.state.items,
-      homePageTrigger: this.state.homePageTrigger,
+      //homePageTrigger: this.state.homePageTrigger,
       logout: this.handleLogout,
       setItems: this.handleSetItems,
       addItem: this.handleAddItem, 

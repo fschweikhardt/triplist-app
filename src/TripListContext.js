@@ -6,13 +6,13 @@ const TripListContext = React.createContext({
     lists: [],
     setLists: () => {},
     items: [],
-    homePageTrigger: '',
-    logout: () => {},
+    //homePageTrigger: '',
     setItems: () => {},
     addItem: () => {}, 
     deleteItem: () => {}, 
     addList: () => {}, 
-    deleteList: () => {}
+    deleteList: () => {},
+    logout: () => {}
 })
 
 export default TripListContext

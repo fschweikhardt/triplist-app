@@ -2,7 +2,6 @@ import React from 'react'
 import './App.css'
 import TripListContext from './TripListContext'
 import DisplayLists from './DisplayLists'
-//import STORE from './STORE'
 
 
 export default class Home extends React.Component {
@@ -15,12 +14,7 @@ export default class Home extends React.Component {
     static contextType = TripListContext
 
     render() {
-        // const resetUser = {
-        //     username: STORE.username,
-        //     lists: STORE.lists,
-        //     items: STORE.items
-        // }
-
+        
     return (
 
             <div>
@@ -29,9 +23,7 @@ export default class Home extends React.Component {
                 </header>
                 <nav>
                     <button
-                    onClick={this.handleLogout}
-                        //onClick={()=>this.context.setUsername('')}
-                        
+                        onClick={this.handleLogout}
                     >
                         LOG OUT
                     </button>

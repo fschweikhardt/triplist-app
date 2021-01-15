@@ -19,43 +19,13 @@ export default class List extends React.Component {
         }))
 
     handleAddItem = (e) => {
-
         e.preventDefault()
-
-
-
         const item = {
             name: e.target.newItem.value,
             list_id: this.props.id
         }
-
         this.context.addItem(item)
         e.target.reset()
-
-        // const options = {
-        //     method: 'POST', 
-        //     headers: {
-        //         'content-type': 'application/json',
-        //       //'Authorization': `Bearer ${usernameLogin}:${passwordLogin}` 
-        //       },
-        //     body: JSON.stringify(item)
-        // }
-        // fetch(`${config.API_ENDPOINT}/items`, options)
-        //     .then(res => {
-        //         if (!res.ok) {
-        //             return res.json().then(e => Promise.reject(e))
-        //         }
-        //         return res.json()
-        //     })
-        //     .then(res => console.log(res))
-        //     .then(this.context.addItem(item))
-        
-        
-    
-
-        // console.log(e.target.newItem.value, listId)
-        // this.context.addItem(e.target.newItem.value, listId)
-        // e.target.reset()
     }
 
     handleDeleteItem = (item_id) => {
@@ -73,20 +43,18 @@ export default class List extends React.Component {
             body: JSON.stringify(deleteItem)
         }
         fetch(`${config.API_ENDPOINT}/items`, options)
-        
-        this.context.deleteItem(item_id)
+            .then(this.context.deleteItem(item_id))
+            .catch(error => {
+                console.error({ error })
+            }) 
+       // this.context.deleteItem(item_id)
     }
-
-    
 
     handleDeleteList = (list) => {
         console.log('delete list on list.js', list, 'this.props.id=',this.props.id)
-        
-        
         const deleteList = {
             id: list
         }
-        
         const options = { 
             method: 'DELETE',
             headers: {
@@ -95,25 +63,11 @@ export default class List extends React.Component {
               },
             body: JSON.stringify(deleteList)
         }
-
         fetch(`${config.API_ENDPOINT}/lists`, options)
-            // .then(res => {
-            //     if (!res.ok) {
-            //         return res.json().then(e => Promise.reject(e))
-            //     }
-            //     return res.json()
-            // })
-            // .then(data => {
-            //     console.log(data)
-            //     this.context.deleteList(list)
-            // })
             .then(this.context.deleteList(list))
             .catch(error => {
                 console.error({ error })
-            })
-
-            
-            
+            })       
     }
 
     render() {
@@ -146,7 +100,6 @@ export default class List extends React.Component {
                         hide/expand
                     </button>
                 </h3>
-
                 <ul>
                     {itemsToList.map( (item ) => {
                         return (
@@ -157,15 +110,10 @@ export default class List extends React.Component {
                                     name={item.name} 
                                     id={item.item_id}
                                 />
-                                {/* <button>
-                                    edit
-                                </button> */}
                                 <button
                                     type='button'
                                     name='deleteItem'
                                     id='deleteItem'
-                                    //listId={this.props.id}
-                                    //value={itemId}
                                     onClick={()=> this.handleDeleteItem(item.item_id)}
                                 >
                                     delete
@@ -191,7 +139,6 @@ export default class List extends React.Component {
                         Add list item
                     </button>
                 </form>
-
                 <br />
                 <br />
                 <button
