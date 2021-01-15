@@ -27,11 +27,12 @@ export default class Register extends React.Component{
             body: JSON.stringify(newUser)
         }
 
-        fetch(`${config.API_ENDPOINT}/users`, options)
+        fetch(`${config.API_ENDPOINT}/register`, options)
             .then(res => {
                 if (!res.ok) {
                     return res.json().then(e => Promise.reject(e))
                 }
+                console.log('response from server')
                 return res.json()
             })
             //.then(this.props.history.push('/welcome/login'))

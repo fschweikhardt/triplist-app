@@ -26,7 +26,7 @@ export default class Login extends React.Component {
             body: JSON.stringify(userLogin)
         }
 
-        fetch(`${config.API_ENDPOINT}/user`, usernameOptions)
+        fetch(`${config.API_ENDPOINT}/login`, usernameOptions)
             .then(res => {
                 if (!res.ok) {
                     return res.json().then(e => Promise.reject(e))
