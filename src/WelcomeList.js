@@ -57,24 +57,24 @@ export default class WelcomeList extends React.Component {
                     </button>
                 </section>
 
-                <section>
+                {/* <section>
                     <h2>Enter as Guest</h2>
                     
-                    {/* <button
+                    <button
                         onClick={this.handleSubmit}
                         >
                             SUBMIT AS GUEST
                         <Link to='/home'>
                             TRY AS GUEST
                         </Link>
-                    </button>  */}
+                    </button> 
                 
                 </section>
                 <button>   
                     <Link to='/home'>
                         ENTER
                     </Link>
-                </button>
+                </button> */}
             </div>
     )
 }

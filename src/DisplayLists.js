@@ -32,7 +32,6 @@ export default class DisplayLists extends React.Component {
                    {this.context.lists.map( list => {
                        return (
                            <li key={list.id}>
-                               {list.id}
                                <hr />
                                <List
                                     id={list.id}

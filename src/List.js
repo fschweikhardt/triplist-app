@@ -52,6 +52,10 @@ export default class List extends React.Component {
 
     handleDeleteList = (list) => {
         console.log('delete list on list.js', list, 'this.props.id=',this.props.id)
+
+        //if list has items
+        //alert('cannot delete list containing items')
+
         const deleteList = {
             id: list
         }
@@ -104,7 +108,6 @@ export default class List extends React.Component {
                     {itemsToList.map( (item ) => {
                         return (
                             <li key={item.item_id}>
-                                {item.item_id}
                                 <br />
                                 <Item
                                     name={item.name} 

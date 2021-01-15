@@ -57,7 +57,8 @@ export default class Register extends React.Component{
                     <input
                         type='text'
                         id='email'
-                        name='email'>
+                        name='email'
+                        defaultValue='use default'>
                     </input>
                 </label>
                 <br />
@@ -77,6 +78,7 @@ export default class Register extends React.Component{
                         type='text'
                         id='password'
                         name='password'
+                        defaultValue='password'
                     >
                     </input>
                 </label>
@@ -88,10 +90,10 @@ export default class Register extends React.Component{
                 </button>
                 <br />    
                 </form>
-                <button
+                {/* <button
                     onClick={()=>this.props.history.push('/login')}>
                     LOGIN
-                </button> 
+                </button>  */}
             </div>
         )
     }
