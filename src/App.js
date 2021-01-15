@@ -5,29 +5,35 @@ import './App.css'
 import LandingPage from './LandingPage'
 import Welcome from './Welcome'
 import Login from './Login'
+//import LoginUser from './LoginUser'
 import Register from './Register'
 import Home from './Home'
 
 import config from './config'
 //import { v4 as uuidv4 } from 'uuid'
-//import STORE from './STORE'
+import STORE from './STORE'
 
 class App extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      //loggedin: false, 
-      username: '',
-      lists: '',
-      items: '',
+    this.state = { 
+      username: STORE.username,
+      lists: STORE.lists,
+      items: STORE.items,
+      homePageTrigger: "this.props.history.push('/home')"
+    }
   }
-  }
- 
-    
 
   static contextType = TripListContext
 
-  
+  handleLogout = (user) => {
+    console.log('log out', user)    
+    this.setState({
+      username: STORE.username,
+      lists: STORE.lists,
+      items: STORE.items
+    })
+  }
 
   handleSetUsername = (username) => {
     //------> set username
@@ -85,6 +91,13 @@ class App extends React.Component {
       .then(res => console.log(res))
       .then(console.log('end of fetch for items')) 
       
+      // this.setState({
+      //   homePageTrigger: this.props.history.push('/home')
+      // })
+      //console.log(this.props.history.push('/home'))
+
+      
+
   }
 
   handleSetLists = (setLists) => {
@@ -177,6 +190,8 @@ class App extends React.Component {
       lists: this.state.lists,
       setLists: this.handleSetLists,
       items: this.state.items,
+      homePageTrigger: this.state.homePageTrigger,
+      logout: this.handleLogout,
       setItems: this.handleSetItems,
       addItem: this.handleAddItem, 
       deleteItem: this.handleDeleteItem, 

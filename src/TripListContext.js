@@ -6,6 +6,8 @@ const TripListContext = React.createContext({
     lists: [],
     setLists: () => {},
     items: [],
+    homePageTrigger: '',
+    logout: () => {},
     setItems: () => {},
     addItem: () => {}, 
     deleteItem: () => {}, 

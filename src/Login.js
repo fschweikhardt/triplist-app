@@ -40,6 +40,7 @@ export default class Login extends React.Component {
             })
             .catch(error => {
                 console.error({ error })
+                alert('try again please')
             }) 
 
         //----------------> get lists
@@ -136,12 +137,27 @@ export default class Login extends React.Component {
         //     console.log("Ran login")
         //     this.props.history.push('/home')
         //   }
-        //   setInterval(login,100)
+          
+        // const componentDidMount = () => {
+        //       setInterval(login,100)
+        // }
+
+        // const componentWillUnmount = () => {
+        //     componentDidMount()
+        //     clearInterval(setInterval(login,100));
+        // }
+
+        // componentWillUnmount()
+
+        //console.log('loggin push home', this.props.history.push('/home'))
+       console.log(this.context.homePageTrigger)
+       
+        //window.location = "/home"
        
     }
 
     render() {
-
+        //console.log(this.props.history.push('/home'))
     return (
         <div>
             <form onSubmit={this.handleSubmit}>

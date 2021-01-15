@@ -2,51 +2,55 @@ import { v4 as uuidv4 } from 'uuid'
 
 // eslint-disable-next-line
 export default {
+    username: 'guest',
     lists: [
         {
             id: 1,
             title: "With Partner", 
+            username: 'guest'
         },
         {
             id: 2,
             title: "Solo", 
+            username: 'guest'
         },
         {
             id: 3,
             title: "In-Law Vacation",
+            username: 'guest'
         },
     ], 
 
     items: [
         {
             name: "Paris",
-            itemId: uuidv4(),
-            listId: 1
+            item_id: uuidv4(),
+            list_id: 1
         },
         {
             name: "Venice",
-            itemId: uuidv4(),
-            listId: 1
+            item_id: uuidv4(),
+            list_id: 1
         },
         {
             name: "Rome",
-            itemId: uuidv4(),
-            listId: 1
+            item_id: uuidv4(),
+            list_id: 1
         },
         {
             name: "camping in Oregon",
-            itemId: uuidv4(),
-            listId: 2
+            item_id: uuidv4(),
+            list_id: 2
         },
         {
             name: "hiking the AT",
-            itemId: uuidv4(),
-            listId: 2
+            item_id: uuidv4(),
+            list_id: 2
         },
         {
             name: "Ireland",
-            itemId: uuidv4(),
-            listId: 3
+            item_id: uuidv4(),
+            list_id: 3
         },
     ]
 }

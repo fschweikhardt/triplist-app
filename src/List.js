@@ -19,8 +19,10 @@ export default class List extends React.Component {
         }))
 
     handleAddItem = (e) => {
-        
+
         e.preventDefault()
+
+        
 
         const item = {
             name: e.target.newItem.value,
