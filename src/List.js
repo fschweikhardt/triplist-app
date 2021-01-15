@@ -22,7 +22,7 @@ export default class List extends React.Component {
 
         e.preventDefault()
 
-        
+
 
         const item = {
             name: e.target.newItem.value,
@@ -58,10 +58,26 @@ export default class List extends React.Component {
         // e.target.reset()
     }
 
-    handleDeleteItem = (itemId) => {
-        console.log('delete item on list.js', itemId)
-        this.context.deleteItem(itemId)
+    handleDeleteItem = (item_id) => {
+        console.log('delete item on list.js', item_id)
+        
+        const deleteItem = {
+            item_id: item_id
+        }
+        const options = { 
+            method: 'DELETE',
+            headers: {
+                'content-type': 'application/json',
+              //'Authorization': `Bearer ${usernameLogin}:${passwordLogin}` 
+              },
+            body: JSON.stringify(deleteItem)
+        }
+        fetch(`${config.API_ENDPOINT}/items`, options)
+        
+        this.context.deleteItem(item_id)
     }
+
+    
 
     handleDeleteList = (list) => {
         console.log('delete list on list.js', list, 'this.props.id=',this.props.id)
@@ -70,6 +86,7 @@ export default class List extends React.Component {
         const deleteList = {
             id: list
         }
+        
         const options = { 
             method: 'DELETE',
             headers: {
@@ -78,6 +95,7 @@ export default class List extends React.Component {
               },
             body: JSON.stringify(deleteList)
         }
+
         fetch(`${config.API_ENDPOINT}/lists`, options)
             // .then(res => {
             //     if (!res.ok) {
@@ -85,13 +103,17 @@ export default class List extends React.Component {
             //     }
             //     return res.json()
             // })
-            //.then(res => res.json('ok'))
-            //.then(res => console.log(res))
-            //.then(this.context.deleteList(list))
-            // .catch(error => {
-            //     console.error({ error })
+            // .then(data => {
+            //     console.log(data)
+            //     this.context.deleteList(list)
             // })
-            this.context.deleteList(list)
+            .then(this.context.deleteList(list))
+            .catch(error => {
+                console.error({ error })
+            })
+
+            
+            
     }
 
     render() {
@@ -144,7 +166,7 @@ export default class List extends React.Component {
                                     id='deleteItem'
                                     //listId={this.props.id}
                                     //value={itemId}
-                                    onClick={()=> this.handleDeleteItem(item.itemId)}
+                                    onClick={()=> this.handleDeleteItem(item.item_id)}
                                 >
                                     delete
                                 </button>

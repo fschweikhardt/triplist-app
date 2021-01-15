@@ -11,7 +11,7 @@ export default class Home extends React.Component {
         this.context.logout('user')
         this.props.history.push('/')
     }
-    
+
     static contextType = TripListContext
 
     render() {

@@ -35,12 +35,13 @@ export default class Register extends React.Component{
                 console.log('response from server')
                 return res.json()
             })
-            //.then(this.props.history.push('/welcome/login'))
+            .then(this.props.history.push('/login'))
             .catch(error => {
                 console.error({ error })
             }) 
 
         e.target.reset()
+        //.thenthis.props.push('/login')
     }
 
     render() {
@@ -86,11 +87,11 @@ export default class Register extends React.Component{
                     Submit
                 </button>
                 <br />    
-                <button
-                    onClick={()=>this.props.history.goBack()}>
-                    GO BACK
-                </button>  
                 </form>
+                <button
+                    onClick={()=>this.props.history.push('/login')}>
+                    LOGIN
+                </button> 
             </div>
         )
     }

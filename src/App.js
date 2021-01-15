@@ -35,6 +35,18 @@ class App extends React.Component {
     })
   }
 
+  handleSetLists = (setLists) => {
+    this.setState({
+      lists: setLists
+    })
+  }
+
+  handleSetItems = (setItems) => {
+    this.setState({
+      lists: setItems
+    })
+  }
+
   handleSetUsername = (username) => {
     //------> set username
     console.log(username)
@@ -96,20 +108,6 @@ class App extends React.Component {
       // })
       //console.log(this.props.history.push('/home'))
 
-      
-
-  }
-
-  handleSetLists = (setLists) => {
-    this.setState({
-      lists: setLists
-    })
-  }
-
-  handleSetItems = (setItems) => {
-    this.setState({
-      lists: setItems
-    })
   }
 
   handleAddItem = (item) => {
@@ -138,9 +136,9 @@ class App extends React.Component {
         }) 
   }
 
-  handleDeleteItem = (itemId) => {
-      console.log('delete item on home.js', itemId)
-      const removedItem = this.state.items.filter( itm => itm.itemId !== itemId)
+  handleDeleteItem = (item_id) => {
+      console.log('delete item on home.js', item_id)
+      const removedItem = this.state.items.filter( itm => itm.item_id !== item_id)
       this.setState({
           items: removedItem
       })
