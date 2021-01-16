@@ -53,7 +53,12 @@ export default class List extends React.Component {
     handleDeleteList = (list) => {
         console.log('delete list on list.js', list, 'this.props.id=',this.props.id)
 
+        const items = this.context.items
+        const itemsToList = items.filter( i => i.list_id === list)
         //if list has items
+        if (itemsToList.length !== 0) {
+            return alert("Cannot delete a list containing items")
+        }
         //alert('cannot delete list containing items')
 
         const deleteList = {
@@ -79,6 +84,7 @@ export default class List extends React.Component {
         const list = this.props.id
         const items = this.context.items
         const itemsToList = items.filter( i => i.list_id === list)
+        console.log(itemsToList)
 
         const hidden = 
             <div>

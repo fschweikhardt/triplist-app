@@ -30,12 +30,14 @@ export default class Register extends React.Component{
         fetch(`${config.API_ENDPOINT}/register`, options)
             .then(res => {
                 if (!res.ok) {
+                    alert('Choose a different username')
                     return res.json().then(e => Promise.reject(e))
-                }
-                console.log('response from server')
+                } else {
+                this.props.history.push('/login')
                 return res.json()
+                
+                }
             })
-            .then(this.props.history.push('/login'))
             .catch(error => {
                 console.error({ error })
             }) 
@@ -90,10 +92,11 @@ export default class Register extends React.Component{
                 </button>
                 <br />    
                 </form>
-                {/* <button
+                <p>After clicking submit, click LOGIN</p>
+                <button
                     onClick={()=>this.props.history.push('/login')}>
                     LOGIN
-                </button>  */}
+                </button> 
             </div>
         )
     }

@@ -95,13 +95,13 @@ export default class Login extends React.Component {
                     </input>
                 </label>
                 <br />
-                <p>hit submit</p>
+                <p>hit submit...</p>
                 <button
                     type='submit'>
                     SUBMIT
                 </button>
                 <br />  
-                <p>then enter</p>
+                <p>then click enter</p>
             </form> 
             <button
                 onClick={()=>this.props.history.push('/home')}
