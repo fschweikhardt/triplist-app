@@ -22,7 +22,7 @@ export default class Register extends React.Component{
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
-                //'Authorization': `Bearer ${config.API_TOKEN}` 
+                'Authorization': `Bearer ${config.API_TOKEN}` 
             },
             body: JSON.stringify(newUser)
         }

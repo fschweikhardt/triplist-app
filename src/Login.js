@@ -21,7 +21,7 @@ export default class Login extends React.Component {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
-                //'Authorization': `Bearer ${usernameLogin}:${passwordLogin}` 
+                'Authorization': `Bearer ${config.API_TOKEN}` 
             },
             body: JSON.stringify(userLogin)
         }

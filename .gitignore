@@ -6,6 +6,7 @@
 .pnp.js
 
 # dev
+.env
 .eslintcache
 
 # testing

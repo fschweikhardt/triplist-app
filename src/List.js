@@ -38,7 +38,7 @@ export default class List extends React.Component {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json',
-              //'Authorization': `Bearer ${usernameLogin}:${passwordLogin}` 
+                'Authorization': `Bearer ${config.API_TOKEN}` 
               },
             body: JSON.stringify(deleteItem)
         }
@@ -68,7 +68,7 @@ export default class List extends React.Component {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json',
-              //'Authorization': `Bearer ${usernameLogin}:${passwordLogin}` 
+                'Authorization': `Bearer ${config.API_TOKEN}` 
               },
             body: JSON.stringify(deleteList)
         }

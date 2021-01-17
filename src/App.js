@@ -64,7 +64,7 @@ class App extends React.Component {
       method: 'POST', 
       headers: {
         'content-type': 'application/json',
-      //'Authorization': `Bearer ${usernameLogin}:${passwordLogin}` 
+        'Authorization': `Bearer ${config.API_TOKEN}` 
       },
       body: JSON.stringify(user)
     }
@@ -114,7 +114,7 @@ class App extends React.Component {
         method: 'POST', 
         headers: {
             'content-type': 'application/json',
-          //'Authorization': `Bearer ${usernameLogin}:${passwordLogin}` 
+            'Authorization': `Bearer ${config.API_TOKEN}` 
           },
         body: JSON.stringify(newList)
     }
@@ -149,7 +149,7 @@ class App extends React.Component {
       method: 'POST', 
       headers: {
           'content-type': 'application/json',
-        //'Authorization': `Bearer ${usernameLogin}:${passwordLogin}` 
+          'Authorization': `Bearer ${config.API_TOKEN}` 
         },
       body: JSON.stringify(item)
   }
