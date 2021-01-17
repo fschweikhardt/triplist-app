@@ -19,7 +19,7 @@ export default class WelcomeList extends React.Component {
             body: JSON.stringify(user)
         }
 
-        fetch(`${config.API_ENDPOINT}/user`, options)
+        fetch(`${config.API_ENDPOINT}api/user`, options)
             .then(res => {
                 if (!res.ok) {
                     return res.json().then(e => Promise.reject(e))

@@ -68,7 +68,7 @@ class App extends React.Component {
       },
       body: JSON.stringify(user)
     }
-    fetch(`${config.API_ENDPOINT}/userLists`, options)
+    fetch(`${config.API_ENDPOINT}api/userLists`, options)
       .then(res => {
         if (!res.ok) {
             return res.json().then(e => Promise.reject(e))
@@ -85,7 +85,7 @@ class App extends React.Component {
 
       //-------> get & set user items
 
-      fetch(`${config.API_ENDPOINT}/userItems`, options)
+      fetch(`${config.API_ENDPOINT}api/userItems`, options)
       .then(res => {
         if (!res.ok) {
             return res.json().then(e => Promise.reject(e))
@@ -118,7 +118,7 @@ class App extends React.Component {
           },
         body: JSON.stringify(newList)
     }
-    fetch(`${config.API_ENDPOINT}/lists`, options)
+    fetch(`${config.API_ENDPOINT}api/lists`, options)
         .then(res => {
             if (!res.ok) {
                 return res.json().then(e => Promise.reject(e))
@@ -153,7 +153,7 @@ class App extends React.Component {
         },
       body: JSON.stringify(item)
   }
-    fetch(`${config.API_ENDPOINT}/items`, options)
+    fetch(`${config.API_ENDPOINT}api/items`, options)
       .then(res => {
           if (!res.ok) {
               return res.json().then(e => Promise.reject(e))

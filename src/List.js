@@ -42,7 +42,7 @@ export default class List extends React.Component {
               },
             body: JSON.stringify(deleteItem)
         }
-        fetch(`${config.API_ENDPOINT}/items`, options)
+        fetch(`${config.API_ENDPOINT}api/items`, options)
             .then(this.context.deleteItem(item_id))
             .catch(error => {
                 console.error({ error })
@@ -72,7 +72,7 @@ export default class List extends React.Component {
               },
             body: JSON.stringify(deleteList)
         }
-        fetch(`${config.API_ENDPOINT}/lists`, options)
+        fetch(`${config.API_ENDPOINT}api/lists`, options)
             .then(this.context.deleteList(list))
             .catch(error => {
                 console.error({ error })
