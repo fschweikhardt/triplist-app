@@ -30,8 +30,10 @@ export default class Home extends React.Component {
                 </nav>
                 <main>
                     <h1>
-                         Hello! , {this.context.username}
+                         Hello, {this.context.username}!
                     </h1>
+                    <hr />
+                    <hr />
                     <DisplayLists />
                 </main>
             </div>
