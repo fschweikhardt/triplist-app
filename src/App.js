@@ -79,9 +79,10 @@ class App extends React.Component {
         this.setState({
           lists: res
         }) 
+        console.log(res, 'end of fetch for lists')
       })
-      .then(res => console.log(res))
-      .then(console.log('end of fetch for lists'))
+      //.then(res => console.log(res))
+      //.then(console.log('end of fetch for lists'))
 
       //-------> get & set user items
 
@@ -96,9 +97,10 @@ class App extends React.Component {
         this.setState({
           items: res
         }) 
+        console.log(res, 'end of fetch for items')
       })
-      .then(res => console.log(res))
-      .then(console.log('end of fetch for items')) 
+      //.then(res => console.log(res))
+      //.then(console.log('end of fetch for items')) 
       
       // this.setState({
       //   homePageTrigger: this.props.history.push('/home')
