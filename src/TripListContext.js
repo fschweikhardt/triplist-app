@@ -3,15 +3,16 @@ import React from 'react'
 const TripListContext = React.createContext({
     username: '',
     setUsername: ()=> {},
+    setToken: ()=> {},
     lists: [],
     setLists: () => {},
     items: [],
-    //homePageTrigger: '',
     setItems: () => {},
     addItem: () => {}, 
     deleteItem: () => {}, 
     addList: () => {}, 
     deleteList: () => {},
+    loggedIn: () => {},
     logout: () => {}
 })
 

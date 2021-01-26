@@ -14,14 +14,52 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = { 
+      loggedIn: false,
       username: STORE.username,
       lists: STORE.lists,
-      items: STORE.items,
-     // homePageTrigger: "this.props.history.push('/home')"
+      items: STORE.items
     }
   }
 
   static contextType = TripListContext
+
+  handleLogIn = () => {
+    this.setState(prevState => ({
+      loggedIn: !prevState.loggedIn
+    }))
+  }
+
+  handleSetToken = token => {
+    const tokenValue = Object.values(token)
+    const headerToken = tokenValue.toString()
+    window.localStorage.setItem('Authorization', headerToken)
+    const storedToken = window.localStorage.Authorization
+    
+    const options = {
+      method: 'Get',
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${storedToken}` 
+      }
+    }
+
+    fetch(`${config.API_ENDPOINT}/api/verifyLists`, options)
+      .then(res => {
+        if (!res.ok) {
+            return res.json().then(e => Promise.reject(e))
+        }
+        return res.json()
+      })
+      .then( data => {
+        this.setState({
+          username: data[0].username,
+          lists: data
+        }) 
+        console.log(data[0].username, 'end of verifyLists')
+      })
+
+
+  }
 
   handleLogout = (user) => {
     console.log('log out', user)    
@@ -182,12 +220,13 @@ handleDeleteItem = (item_id) => {
 
     const value = {
       setUsername: this.handleSetUsername,
+      setToken: this.handleSetToken,
       username: this.state.username,
       lists: this.state.lists,
       setLists: this.handleSetLists,
       items: this.state.items,
-      //homePageTrigger: this.state.homePageTrigger,
       logout: this.handleLogout,
+      loggedIn: this.handleLogIn,
       setItems: this.handleSetItems,
       addItem: this.handleAddItem, 
       deleteItem: this.handleDeleteItem, 
@@ -195,6 +234,7 @@ handleDeleteItem = (item_id) => {
       deleteList: this.handleDeleteList
     }
 
+    console.log(this.state.loggedIn)
     console.log(this.state.username)
     console.log(this.state.lists)
     console.log(this.state.items)

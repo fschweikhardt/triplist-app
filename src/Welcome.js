@@ -21,9 +21,10 @@ export default function Welcome() {
                     component={Login}
                 />
 
-                <Route path='/register'>
-                    <Register />
-                </Route>
+                <Route 
+                    path='/register'
+                    component={Register}
+                />
 
             </Switch>
 
