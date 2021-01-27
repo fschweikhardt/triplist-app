@@ -56,7 +56,7 @@ export default class Register extends React.Component{
                         type='text'
                         id='email'
                         name='email'
-                        defaultValue='use default'
+                        //defaultValue='use default'
                         required
                         >
                     </input>
@@ -79,7 +79,7 @@ export default class Register extends React.Component{
                         type='text'
                         id='password'
                         name='password'
-                        defaultValue='password'
+                        //defaultValue='password'
                         required
                     >
                     </input>

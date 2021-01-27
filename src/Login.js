@@ -70,7 +70,7 @@ export default class Login extends React.Component {
                         type='text'
                         id='password'
                         name='password'
-                        defaultValue='password'
+                        //defaultValue='password'
                         required
                         >
                     </input>
