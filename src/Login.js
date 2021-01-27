@@ -67,7 +67,7 @@ export default class Login extends React.Component {
                 <label>
                     password
                     <input
-                        type='text'
+                        type='password'
                         id='password'
                         name='password'
                         //defaultValue='password'

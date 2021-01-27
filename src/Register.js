@@ -76,7 +76,7 @@ export default class Register extends React.Component{
                 <label>
                     create password
                     <input
-                        type='text'
+                        type='password'
                         id='password'
                         name='password'
                         //defaultValue='password'
