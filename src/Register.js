@@ -10,7 +10,6 @@ export default class Register extends React.Component{
 
     handleSubmit = (e) => {
         e.preventDefault()
-       // this.props.getUsername(e.target.username.value)
 
         const newUser = {
             username: e.target.username.value,
@@ -33,7 +32,7 @@ export default class Register extends React.Component{
                     alert('Choose a different username')
                     return res.json().then(e => Promise.reject(e))
                 } else {
-                this.props.history.push('/login')
+                //this.props.history.push('/login')
                 return res.json()
                 
                 }
@@ -43,7 +42,6 @@ export default class Register extends React.Component{
             }) 
 
         e.target.reset()
-        //.thenthis.props.push('/login')
     }
 
     render() {

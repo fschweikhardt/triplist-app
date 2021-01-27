@@ -18,14 +18,28 @@ export default class Home extends React.Component {
         if (!this.state.loggedIn) {
 
             const storedToken = window.localStorage.Authorization
-       
+            //let validatedUsername = ''
+
             const options = {
-                method: 'Get',
+                method: 'GET',
                 headers: {
                 'content-type': 'application/json',
                 'Authorization': `Bearer ${storedToken}` 
                 }
             }
+
+            fetch(`${config.API_ENDPOINT}/api/verifyId`, options)
+                .then(res => {
+                    if (!res.ok) {
+                        return res.json().then(e => Promise.reject(e))
+                    }
+                    return res.json()
+                })
+                .then( data => {
+                    console.log(data)
+                    this.context.setUsername(data)
+                    console.log('end fetch username on Home.js')
+            })
         
             fetch(`${config.API_ENDPOINT}/api/verifyLists`, options)
                 .then(res => {
@@ -37,7 +51,7 @@ export default class Home extends React.Component {
                 .then( data => {
                     console.log(data)
                     
-                    this.context.setUsername(data[0].username)
+                    //this.context.setUsername(data[0].username)
                     this.context.setLists(data) 
 
                     console.log('end fetch setLists on Home.js')

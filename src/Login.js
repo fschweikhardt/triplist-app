@@ -48,28 +48,6 @@ export default class Login extends React.Component {
             }) 
         
         e.target.reset()
-
-        // const login = () => {
-        //     console.log("Ran login")
-        //     this.props.history.push('/home')
-        //   }
-          
-        // const componentDidMount = () => {
-        //       setInterval(login,100)
-        // }
-
-        // const componentWillUnmount = () => {
-        //     componentDidMount()
-        //     clearInterval(setInterval(login,100));
-        // }
-
-        // componentWillUnmount()
-
-        //console.log('loggin push home', this.props.history.push('/home'))
-        //console.log(this.context.homePageTrigger)
-       
-        //window.location = "/home"
-       
     }
 
     render() {
