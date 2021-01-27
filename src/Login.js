@@ -10,8 +10,6 @@ export default class Login extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault()
 
-        //-----------> submit username and password
-
         const userLogin = {
             username: e.target.username.value,
             password: e.target.password.value
@@ -34,12 +32,10 @@ export default class Login extends React.Component {
                 return res.json()
             })
             .then( token => {
-                console.log(token)
                 const tokenValue = Object.values(token)
                 const headerToken = tokenValue.toString()
                 window.localStorage.setItem('Authorization', headerToken)
                 
-                this.context.setToken(token)
                 this.props.history.push('/home')
             })
             .catch(error => {
@@ -80,19 +76,12 @@ export default class Login extends React.Component {
                     </input>
                 </label>
                 <br />
-                <p>hit submit...</p>
                 <button
                     type='submit'>
                     SUBMIT
                 </button>
-                <br />  
-                <p>then click enter</p>
-            </form> 
-            <button
-                onClick={()=>this.props.history.push('/home')}
-                >
-                    ENTER
-            </button>
+                <br /> 
+            </form>  
         </div>
     )
 }

@@ -1,6 +1,5 @@
 import React from 'react'
 import './App.css'
-//import { Link } from 'react-router-dom'
 import TripListContext from './TripListContext'
 import config from './config'
 
@@ -93,11 +92,6 @@ export default class Register extends React.Component{
                 </button>
                 <br />    
                 </form>
-                <p>After clicking submit, click LOGIN</p>
-                <button
-                    onClick={()=>this.props.history.push('/login')}>
-                    LOGIN
-                </button> 
             </div>
         )
     }

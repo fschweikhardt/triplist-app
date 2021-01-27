@@ -19,12 +19,6 @@ class App extends React.Component {
 
   static contextType = TripListContext
 
-  handleSetToken = token => {
-    this.setState({
-      token: token
-    })
-  }
-
   handleSetUsername = username => {
     this.setState({
       username: username
@@ -65,14 +59,12 @@ class App extends React.Component {
             this.setState({
               lists: [...this.state.lists, res]
           })
-          console.log(res)
         })
   }
 
   handleDeleteList = (list) => {
       console.log('delete list on app.js', list)
       let newList = this.state.lists.filter( lst => lst.id !== list)
-      console.log(newList)
       this.setState({
           lists: newList
       })
@@ -100,7 +92,6 @@ class App extends React.Component {
           this.setState({
             items: [...this.state.items, res]
         })
-        console.log(res)
       }) 
 }
 
@@ -112,16 +103,9 @@ handleDeleteItem = (item_id) => {
     })
 }
 
-handleLogout = () => {
-    this.context.logout('user')
-    this.props.history.push('/')
-}
-
   render() {
 
     const value = {
-      setToken: this.handleSetToken,
-      token: this.state.token,
       setUsername: this.handleSetUsername,
       username: this.state.username,
       setLists: this.handleSetLists,
