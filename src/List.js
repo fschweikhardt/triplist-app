@@ -84,7 +84,7 @@ export default class List extends React.Component {
         const list = this.props.id
         const items = this.context.items
         const itemsToList = items.filter( i => i.list_id === list)
-        console.log(itemsToList)
+        //console.log(itemsToList)
 
         const hidden = 
             <div>

@@ -1,19 +1,21 @@
 import React from 'react'
 
 const TripListContext = React.createContext({
+    setUsername: () => {},
     username: '',
-    setUsername: ()=> {},
     setToken: ()=> {},
+    token: '',
     lists: [],
     setLists: () => {},
-    items: [],
     setItems: () => {},
-    addItem: () => {}, 
-    deleteItem: () => {}, 
+    items: [],
+    //setItems: () => {},
     addList: () => {}, 
     deleteList: () => {},
-    loggedIn: () => {},
-    logout: () => {}
+    addItem: () => {}, 
+    deleteItem: () => {}, 
+    //loggedIn: () => {},
+    //logout: () => {}
 })
 
 export default TripListContext

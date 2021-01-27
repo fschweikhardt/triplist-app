@@ -33,15 +33,14 @@ export default class Login extends React.Component {
                 }
                 return res.json()
             })
-            .then( data => {
-                console.log(data)
-                const tokenValue = Object.values(data)
+            .then( token => {
+                console.log(token)
+                const tokenValue = Object.values(token)
                 const headerToken = tokenValue.toString()
                 window.localStorage.setItem('Authorization', headerToken)
-                const storedToken = window.localStorage.Authorization
-                console.log(storedToken)
-                this.context.setToken(data)
-               // this.props.history.push('/home')
+                
+                this.context.setToken(token)
+                this.props.history.push('/home')
             })
             .catch(error => {
                 console.error({ error })
