@@ -12,7 +12,7 @@ import config from './config'
 class App extends React.Component {
 
   state = {
-    username: '',
+    username: 'no one',
     lists: [],
     items: []
   }

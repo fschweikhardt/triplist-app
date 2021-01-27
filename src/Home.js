@@ -13,6 +13,11 @@ export default class Home extends React.Component {
 
     static contextType = TripListContext
 
+    handleLogout = () => {
+        localStorage.clear()
+        this.props.history.push('/')
+    }
+
     render() {
 
         if (!this.state.loggedIn) {

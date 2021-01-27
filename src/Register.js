@@ -32,9 +32,8 @@ export default class Register extends React.Component{
                     alert('Choose a different username')
                     return res.json().then(e => Promise.reject(e))
                 } else {
-                //this.props.history.push('/login')
+                this.props.history.push('/login')
                 return res.json()
-                
                 }
             })
             .catch(error => {
