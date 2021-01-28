@@ -54,27 +54,9 @@ class App extends React.Component {
 
   handleAddItem = (item) => {
     console.log('addItem on home.js', item)
-
-    const options = {
-      method: 'POST', 
-      headers: {
-          'content-type': 'application/json',
-          'Authorization': `Bearer ${config.API_TOKEN}` 
-        },
-      body: JSON.stringify(item)
-  }
-    fetch(`${config.API_ENDPOINT}/api/items`, options)
-      .then(res => {
-          if (!res.ok) {
-              return res.json().then(e => Promise.reject(e))
-          }
-          return res.json()
-      })
-      .then(res => {
-          this.setState({
-            items: [...this.state.items, res]
-        })
-      }) 
+    this.setState({
+      items: [this.state.items, item]
+    })
 }
 
   handleDeleteItem = (item_id) => {

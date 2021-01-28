@@ -5,6 +5,7 @@ import TripListContext from '../TripListContext'
 export default class DeleteList extends React.Component {
     
     static contextType = TripListContext
+    
     handleDeleteList = () => {
         console.log('delete list on list.js', this.props.id)
         
@@ -39,7 +40,6 @@ export default class DeleteList extends React.Component {
     }
 
     render() {
-        console.log(this.props)
 
         return (
             <button

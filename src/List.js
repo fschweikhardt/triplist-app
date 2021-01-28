@@ -3,7 +3,7 @@ import Item from './Item'
 import DeleteList from './buttons/DeleteList'
 import TripListContext from './TripListContext'
 import config from './config'
-
+import AddItem from './buttons/AddItem'
 
 export default class List extends React.Component { 
     constructor(props) {
@@ -19,16 +19,6 @@ export default class List extends React.Component {
         this.setState(prevState => ({
             hide: !prevState.hide
         }))
-
-    handleAddItem = (e) => {
-        e.preventDefault()
-        const item = {
-            name: e.target.newItem.value,
-            list_id: this.props.id
-        }
-        this.context.addItem(item)
-        e.target.reset()
-    }
 
     handleDeleteItem = (item_id) => {
         console.log('delete item on list.js', item_id)
@@ -57,7 +47,7 @@ export default class List extends React.Component {
         const items = this.context.items
         const itemsToList = items.filter( i => i.list_id === list)
 
-        const hidden = 
+        const compactList = 
             <div>
                 <br />
                 <h3>
@@ -70,7 +60,7 @@ export default class List extends React.Component {
                 </h3>
             </div>
 
-        const expanded = 
+        const expandedList = 
             <div>
                 <br />
                 <h3>
@@ -104,21 +94,9 @@ export default class List extends React.Component {
                         })}
                 </ul>
                 <br />
-                <form onSubmit={this.handleAddItem}>
-                    <label htmlFor='newItem'>
-                        add place
-                        <input
-                            type='text'
-                            name='newItem'
-                            id='newItem'
-                            required
-                        />
-                    </label>
-                    <button
-                        type='submit'>
-                        GO
-                    </button>
-                </form>
+                <AddItem 
+                    id={this.props.id}
+                />
                 <br />
                 <br />
                 <DeleteList 
@@ -129,8 +107,8 @@ export default class List extends React.Component {
             </div>
             
         if (this.state.hide === false) {
-            return expanded
+            return expandedList
         } 
-        return hidden
+        return compactList
     }
 }
