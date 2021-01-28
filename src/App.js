@@ -36,9 +36,7 @@ class App extends React.Component {
           items: setItems
       })
   }
-
   
-
   handleDeleteList = (list) => {
       console.log('delete list on app.js', list)
       let newList = this.state.lists.filter( lst => lst.id !== list)
@@ -55,30 +53,12 @@ class App extends React.Component {
     })
 }
 
-handleAddList = (newList) => {
-  console.log('addlist on app.js', newList)
-  
-  const options = {
-    method: 'POST', 
-    headers: {
-        'content-type': 'application/json',
-        'Authorization': `Bearer ${config.API_TOKEN}` 
-      },
-    body: JSON.stringify(newList)
-}
-fetch(`${config.API_ENDPOINT}/api/lists`, options)
-    .then(res => {
-        if (!res.ok) {
-            return res.json().then(e => Promise.reject(e))
-        }
-        return res.json()
+  handleAddList = (newList) => {
+    console.log('addlist on app.js', newList)
+    this.setState({
+      lists: [...this.state.lists, newList]
     })
-    .then(res => {
-        this.setState({
-          lists: [...this.state.lists, res]
-      })
-    })
-}
+  }
 
   handleAddItem = (item) => {
     console.log('addItem on home.js', item)

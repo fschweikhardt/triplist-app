@@ -1,24 +1,12 @@
 import React from 'react'
 import TripListContext from './TripListContext'
 import List from './List'
+import AddList from './buttons/AddList'
 //import config from './config'
 
 export default class DisplayLists extends React.Component {
 
     static contextType = TripListContext
-
-    handleAddList = (e) => {
-        e.preventDefault()
-        console.log('add list on List.js', e.target.newList.value)
-
-        const newList = { 
-            title: e.target.newList.value,
-            username: this.context.username
-        }
-
-        this.context.addList(newList)
-        e.target.reset()
-    }
 
     render() {
 
@@ -42,24 +30,11 @@ export default class DisplayLists extends React.Component {
                            </li>
                        )
                    })}
-               </ul>
-               <br/>
-               <br />
-               <form onSubmit={this.handleAddList}>
-                    <label htmlFor='newList'>
-                        CREATE NEW LIST
-                        <input
-                            type='text'
-                            name='newList'
-                            id='newList'
-                            required
-                        />
-                    </label>
-                    <button
-                        type='submit'>
-                        SUBMIT
-                    </button>
-                </form>
+                </ul>
+                <br/>
+                <br />
+                <AddList />
+
             </div>
         )
     } 
