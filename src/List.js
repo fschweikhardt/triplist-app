@@ -1,7 +1,9 @@
 import React from 'react'
 import Item from './Item'
+import DeleteList from './buttons/DeleteList'
 import TripListContext from './TripListContext'
 import config from './config'
+
 
 export default class List extends React.Component { 
     constructor(props) {
@@ -47,35 +49,6 @@ export default class List extends React.Component {
             .catch(error => {
                 console.error({ error })
             }) 
-    }
-
-    handleDeleteList = () => {
-        console.log('delete list on list.js', this.props.id)
-        
-        const list = this.props.id
-        const items = this.context.items
-        const itemsToList = items.filter( i => i.list_id === list)
-        
-        if (itemsToList.length !== 0) {
-            return alert("Cannot delete a list containing items")
-        }
-
-        const deleteList = {
-            id: list
-        }
-        const options = { 
-            method: 'DELETE',
-            headers: {
-                'content-type': 'application/json',
-                'Authorization': `Bearer ${config.API_TOKEN}` 
-              },
-            body: JSON.stringify(deleteList)
-        }
-        fetch(`${config.API_ENDPOINT}/api/lists`, options)
-            .then(this.context.deleteList(list))
-            .catch(error => {
-                console.error({ error })
-            })       
     }
 
     render() {
@@ -148,10 +121,9 @@ export default class List extends React.Component {
                 </form>
                 <br />
                 <br />
-                <button
-                    onClick={this.handleDeleteList}>
-                    Delete list
-                </button>
+                <DeleteList 
+                    id={this.props.id}
+                />
                 <br />
                 <br />
             </div>

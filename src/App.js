@@ -36,28 +36,20 @@ class App extends React.Component {
           items: setItems
       })
   }
-  
-  handleDeleteList = (list) => {
-      console.log('delete list on app.js', list)
-      let newList = this.state.lists.filter( lst => lst.id !== list)
-      this.setState({
-          lists: newList
-      })
-  }
-
-  handleDeleteItem = (item_id) => {
-    console.log('delete item on home.js', item_id)
-    const removedItem = this.state.items.filter( itm => itm.item_id !== item_id)
-    this.setState({
-        items: removedItem
-    })
-}
 
   handleAddList = (newList) => {
     console.log('addlist on app.js', newList)
     this.setState({
       lists: [...this.state.lists, newList]
     })
+  }
+
+  handleDeleteList = (list) => {
+      console.log('delete list on app.js', list)
+      let newList = this.state.lists.filter( lst => lst.id !== list)
+      this.setState({
+          lists: newList
+      })
   }
 
   handleAddItem = (item) => {
@@ -85,6 +77,14 @@ class App extends React.Component {
       }) 
 }
 
+  handleDeleteItem = (item_id) => {
+    console.log('delete item on home.js', item_id)
+    const removedItem = this.state.items.filter( itm => itm.item_id !== item_id)
+    this.setState({
+        items: removedItem
+    })
+}
+
   render() {
 
     const value = {
@@ -99,10 +99,6 @@ class App extends React.Component {
       addItem: this.handleAddItem, 
       deleteItem: this.handleDeleteItem, 
     }
-
-    console.log(this.state.username)
-    console.log(this.state.lists)
-    console.log(this.state.items)
     
     return (
       <TripListContext.Provider value={value}>
