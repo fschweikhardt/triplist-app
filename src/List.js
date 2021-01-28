@@ -135,7 +135,7 @@ export default class List extends React.Component {
                 <br />
                 <form onSubmit={(e)=>this.handleAddItem(e, this.props.id)}>
                     <label htmlFor='newItem'>
-                        new item
+                        add place
                         <input
                             type='text'
                             name='newItem'
@@ -145,7 +145,7 @@ export default class List extends React.Component {
                     </label>
                     <button
                         type='submit'>
-                        Add list item
+                        GO
                     </button>
                 </form>
                 <br />
