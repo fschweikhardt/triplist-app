@@ -15,7 +15,7 @@ export default function LandingPage() {
             <Link to='/welcome'>
                 GET STARTED
             </Link>
-            <p>Create different travel lists for your different types of trips. (eg. with partner, with in-laws, with friends)
+            <p>Create different travel lists for your different types of trips. (eg. with partner, with in-laws, with friends...)
             </p>
             <br />
           </main>
