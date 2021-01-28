@@ -47,19 +47,18 @@ export default class List extends React.Component {
             .catch(error => {
                 console.error({ error })
             }) 
-       // this.context.deleteItem(item_id)
     }
 
-    handleDeleteList = (list) => {
-        console.log('delete list on list.js', list, 'this.props.id=',this.props.id)
-
+    handleDeleteList = () => {
+        console.log('delete list on list.js', this.props.id)
+        
+        const list = this.props.id
         const items = this.context.items
         const itemsToList = items.filter( i => i.list_id === list)
-        //if list has items
+        
         if (itemsToList.length !== 0) {
             return alert("Cannot delete a list containing items")
         }
-        //alert('cannot delete list containing items')
 
         const deleteList = {
             id: list
@@ -84,7 +83,6 @@ export default class List extends React.Component {
         const list = this.props.id
         const items = this.context.items
         const itemsToList = items.filter( i => i.list_id === list)
-        //console.log(itemsToList)
 
         const hidden = 
             <div>
@@ -106,7 +104,7 @@ export default class List extends React.Component {
                     {this.props.title}
                     <button
                         onClick={this.toggleExpandButton}
-                        >
+                    >
                         hide/expand
                     </button>
                 </h3>
@@ -133,7 +131,7 @@ export default class List extends React.Component {
                         })}
                 </ul>
                 <br />
-                <form onSubmit={(e)=>this.handleAddItem(e, this.props.id)}>
+                <form onSubmit={this.handleAddItem}>
                     <label htmlFor='newItem'>
                         add place
                         <input
@@ -151,7 +149,7 @@ export default class List extends React.Component {
                 <br />
                 <br />
                 <button
-                    onClick={()=>this.handleDeleteList(this.props.id)}>
+                    onClick={this.handleDeleteList}>
                     Delete list
                 </button>
                 <br />
@@ -162,6 +160,5 @@ export default class List extends React.Component {
             return expanded
         } 
         return hidden
-
     }
 }

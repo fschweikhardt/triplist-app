@@ -1,4 +1,3 @@
-//import { render } from '@testing-library/react'
 import React from 'react'
 import config from './config'
 
@@ -37,9 +36,6 @@ export default class Item extends React.Component {
     }
 
     render() {
-
-        console.log(this.props.name)
-        console.log(this.state.photo)
 
         return (
             <div>

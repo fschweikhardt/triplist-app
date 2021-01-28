@@ -37,30 +37,7 @@ class App extends React.Component {
       })
   }
 
-  handleAddList = (newList) => {
-      console.log('addlist on app.js', newList)
-      
-      const options = {
-        method: 'POST', 
-        headers: {
-            'content-type': 'application/json',
-            'Authorization': `Bearer ${config.API_TOKEN}` 
-          },
-        body: JSON.stringify(newList)
-    }
-    fetch(`${config.API_ENDPOINT}/api/lists`, options)
-        .then(res => {
-            if (!res.ok) {
-                return res.json().then(e => Promise.reject(e))
-            }
-            return res.json()
-        })
-        .then(res => {
-            this.setState({
-              lists: [...this.state.lists, res]
-          })
-        })
-  }
+  
 
   handleDeleteList = (list) => {
       console.log('delete list on app.js', list)
@@ -69,6 +46,39 @@ class App extends React.Component {
           lists: newList
       })
   }
+
+  handleDeleteItem = (item_id) => {
+    console.log('delete item on home.js', item_id)
+    const removedItem = this.state.items.filter( itm => itm.item_id !== item_id)
+    this.setState({
+        items: removedItem
+    })
+}
+
+handleAddList = (newList) => {
+  console.log('addlist on app.js', newList)
+  
+  const options = {
+    method: 'POST', 
+    headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${config.API_TOKEN}` 
+      },
+    body: JSON.stringify(newList)
+}
+fetch(`${config.API_ENDPOINT}/api/lists`, options)
+    .then(res => {
+        if (!res.ok) {
+            return res.json().then(e => Promise.reject(e))
+        }
+        return res.json()
+    })
+    .then(res => {
+        this.setState({
+          lists: [...this.state.lists, res]
+      })
+    })
+}
 
   handleAddItem = (item) => {
     console.log('addItem on home.js', item)
@@ -93,14 +103,6 @@ class App extends React.Component {
             items: [...this.state.items, res]
         })
       }) 
-}
-
-handleDeleteItem = (item_id) => {
-    console.log('delete item on home.js', item_id)
-    const removedItem = this.state.items.filter( itm => itm.item_id !== item_id)
-    this.setState({
-        items: removedItem
-    })
 }
 
   render() {
