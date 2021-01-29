@@ -31,7 +31,10 @@ export default class AddItem extends React.Component {
             })
             .then(res => {
                 this.context.addItem(res)
-            }) 
+            })
+            .catch(err => {
+                console.error({ err })
+            })
         
         e.target.reset()
     }

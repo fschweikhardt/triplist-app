@@ -35,11 +35,10 @@ export default class Login extends React.Component {
                 const tokenValue = Object.values(token)
                 const headerToken = tokenValue.toString()
                 window.localStorage.setItem('Authorization', headerToken)
-                
                 this.props.history.push('/home')
             })
-            .catch(error => {
-                console.error({ error })
+            .catch(err => {
+                console.error({ err })
                 alert('try again please')
             }) 
         
@@ -70,7 +69,6 @@ export default class Login extends React.Component {
                         type='password'
                         id='password'
                         name='password'
-                        //defaultValue='password'
                         required
                         >
                     </input>

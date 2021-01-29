@@ -5,9 +5,8 @@ import TripListContext from '../TripListContext'
 export default class DeleteList extends React.Component {
     
     static contextType = TripListContext
-    
+
     handleDeleteList = () => {
-        console.log('delete list on list.js', this.props.id)
         
         const list = this.props.id
         const items = this.context.items
@@ -31,9 +30,8 @@ export default class DeleteList extends React.Component {
         }
 
         fetch(`${config.API_ENDPOINT}/api/lists`, options)
-            //.then(this.context.deleteList(list))
-            .catch(error => {
-                console.error({ error })
+            .catch(err => {
+                console.error({ err })
             })  
         
         this.context.deleteList(list)

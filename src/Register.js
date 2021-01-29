@@ -35,8 +35,8 @@ export default class Register extends React.Component{
                 return res.json()
                 }
             })
-            .catch(error => {
-                console.error({ error })
+            .catch(err => {
+                console.error({ err })
             }) 
 
         e.target.reset()
@@ -56,7 +56,6 @@ export default class Register extends React.Component{
                         type='text'
                         id='email'
                         name='email'
-                        //defaultValue='use default'
                         required
                         >
                     </input>
@@ -79,7 +78,6 @@ export default class Register extends React.Component{
                         type='password'
                         id='password'
                         name='password'
-                        //defaultValue='password'
                         required
                     >
                     </input>

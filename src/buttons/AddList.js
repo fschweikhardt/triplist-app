@@ -8,7 +8,6 @@ export default class AddList extends React.Component {
 
     handleAddList = (e) => {
         e.preventDefault()
-        console.log('add list on AddList.js', e.target.newList.value)
 
         const newList = { 
             title: e.target.newList.value,
@@ -33,6 +32,9 @@ export default class AddList extends React.Component {
             })
             .then(res => {
                 this.context.addList(res)
+            })
+            .catch(err => {
+                console.error({ err })
             })
     
         e.target.reset()

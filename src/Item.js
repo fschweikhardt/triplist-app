@@ -12,14 +12,14 @@ export default class Item extends React.Component {
         let place = this.props.name
         let baseUrl = 'https://api.pexels.com/v1/search?'
 
-        fetch(`${baseUrl}orientation=landscape&per_page=1&query=${place}`,{
+        fetch(`${baseUrl}orientation=landscape&per_page=1&query=${place}`, {
             headers: {
                 Authorization: `${config.IMG_KEY}`
             }
         })
         .then(res => {
             if (!res.ok) {
-                throw Error(res.statusText)
+                return res.json().then(e => Promise.reject(e))
             }
             return res.json()
         })
@@ -30,8 +30,7 @@ export default class Item extends React.Component {
             })
         })
         .catch(err => {
-            console.log(err)
-            alert('no img for this one!')
+            console.error({ err })
         })
     }
 

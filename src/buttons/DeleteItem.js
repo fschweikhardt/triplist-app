@@ -1,0 +1,48 @@
+import React from 'react'
+import config from '../config'
+import TripListContext from '../TripListContext'
+
+export default class DeleteItem extends React.Component {
+
+    static contextType = TripListContext
+
+    handleDeleteItem = (item_id) => {
+        
+        const deleteItem = {
+            item_id: item_id
+        }
+
+        const options = { 
+            method: 'DELETE',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `Bearer ${config.API_TOKEN}` 
+              },
+            body: JSON.stringify(deleteItem)
+        }
+
+        fetch(`${config.API_ENDPOINT}/api/items`, options)
+            .catch(err => {
+                console.error({ err })
+            }) 
+
+        this.context.deleteItem(item_id)
+        
+    }
+
+    render() {
+
+        const { item_id } = this.props
+
+        return (
+            <button
+                type='button'
+                name='deleteItem'
+                id='deleteItem'
+                onClick={()=> this.handleDeleteItem(item_id)}
+            >
+                delete
+            </button>
+        )
+    }
+}

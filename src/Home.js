@@ -39,9 +39,12 @@ export default class Home extends React.Component {
                     }
                     return res.json()
                 })
-                .then( data => {
+                .then(data => {
                     this.context.setUsername(data)
-            })
+                 })
+                .catch(err => {
+                    console.error({ err })
+                })
         
             fetch(`${config.API_ENDPOINT}/api/verifyLists`, options)
                 .then(res => {
@@ -50,9 +53,12 @@ export default class Home extends React.Component {
                     }
                     return res.json()
                 })
-                .then( data => {
+                .then(data => {
                     this.context.setLists(data) 
-            })
+                })
+                .catch(err => {
+                    console.error({ err })
+                })
 
             fetch(`${config.API_ENDPOINT}/api/verifyItems`, options)
                 .then(res => {
@@ -61,11 +67,15 @@ export default class Home extends React.Component {
                     }
                     return res.json()
                 })
-                .then( data => {
+                .then(data => {
                     this.context.setItems(data) 
                     this.setState({
                         loggedIn: true
-                    })
+                })
+                //throws error; don't know why
+                // .catch(err => {
+                //     console.error({ err })
+                // })
             })
         }
 

@@ -7,7 +7,6 @@ import Welcome from './Welcome'
 import Login from './Login'
 import Register from './Register'
 import Home from './Home'
-import config from './config'
 
 class App extends React.Component {
 
@@ -38,14 +37,12 @@ class App extends React.Component {
   }
 
   handleAddList = (newList) => {
-    console.log('addlist on app.js', newList)
     this.setState({
       lists: [...this.state.lists, newList]
     })
   }
 
   handleDeleteList = (list) => {
-      console.log('delete list on app.js', list)
       let newList = this.state.lists.filter( lst => lst.id !== list)
       this.setState({
           lists: newList
@@ -53,14 +50,12 @@ class App extends React.Component {
   }
 
   handleAddItem = (item) => {
-    console.log('addItem on home.js', item)
     this.setState({
-      items: [this.state.items, item]
+      items: [...this.state.items, item]
     })
 }
 
   handleDeleteItem = (item_id) => {
-    console.log('delete item on home.js', item_id)
     const removedItem = this.state.items.filter( itm => itm.item_id !== item_id)
     this.setState({
         items: removedItem
