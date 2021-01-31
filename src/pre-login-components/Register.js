@@ -1,7 +1,7 @@
 import React from 'react'
-import './App.css'
-import TripListContext from './TripListContext'
-import config from './config'
+import '../App.css'
+import TripListContext from '../TripListContext'
+import config from '../config'
 
 export default class Register extends React.Component{
 

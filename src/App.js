@@ -2,11 +2,11 @@ import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import TripListContext from './TripListContext'
 import './App.css'
-import LandingPage from './LandingPage'
-import Welcome from './Welcome'
-import Login from './Login'
-import Register from './Register'
-import Home from './Home'
+import LandingPage from './pre-login-components/LandingPage'
+import Welcome from './pre-login-components/Welcome'
+import Login from './pre-login-components/Login'
+import Register from './pre-login-components/Register'
+import Home from './post-login-components/Home'
 
 class App extends React.Component {
 

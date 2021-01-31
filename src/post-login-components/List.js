@@ -1,7 +1,7 @@
 import React from 'react'
 import Item from './Item'
+import TripListContext from '../TripListContext'
 import DeleteList from './buttons/DeleteList'
-import TripListContext from './TripListContext'
 import AddItem from './buttons/AddItem'
 import DeleteItem from './buttons/DeleteItem'
 

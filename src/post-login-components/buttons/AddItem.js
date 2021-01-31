@@ -1,6 +1,6 @@
 import React from 'react'
-import config from '../config'
-import TripListContext from '../TripListContext'
+import config from '../../config'
+import TripListContext from '../../TripListContext'
 
 export default class AddItem extends React.Component {
 
@@ -9,6 +9,8 @@ export default class AddItem extends React.Component {
     handleAddItem = (e) => {
         e.preventDefault()
         
+        const storedToken = window.localStorage.Authorization
+
         const item = {
             name: e.target.newItem.value,
             list_id: this.props.id
@@ -18,7 +20,7 @@ export default class AddItem extends React.Component {
             method: 'POST', 
             headers: {
                 'content-type': 'application/json',
-                'Authorization': `Bearer ${config.API_TOKEN}` 
+                'Authorization': `Bearer ${storedToken}` 
               },
             body: JSON.stringify(item)
         }

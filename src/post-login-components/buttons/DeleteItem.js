@@ -1,6 +1,6 @@
 import React from 'react'
-import config from '../config'
-import TripListContext from '../TripListContext'
+import config from '../../config'
+import TripListContext from '../../TripListContext'
 
 export default class DeleteItem extends React.Component {
 
@@ -8,6 +8,8 @@ export default class DeleteItem extends React.Component {
 
     handleDeleteItem = (item_id) => {
         
+        const storedToken = window.localStorage.Authorization
+
         const deleteItem = {
             item_id: item_id
         }
@@ -16,7 +18,7 @@ export default class DeleteItem extends React.Component {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json',
-                'Authorization': `Bearer ${config.API_TOKEN}` 
+                'Authorization': `Bearer ${storedToken}` 
               },
             body: JSON.stringify(deleteItem)
         }

@@ -1,8 +1,8 @@
 import React from 'react'
-import './App.css'
-import TripListContext from './TripListContext'
+import '../App.css'
+import TripListContext from '../TripListContext'
 import DisplayLists from './DisplayLists'
-import config from './config'
+import config from '../config'
 
 
 export default class Home extends React.Component {
@@ -72,7 +72,7 @@ export default class Home extends React.Component {
                     this.setState({
                         loggedIn: true
                 })
-                //throws error; don't know why
+                //---------> throws error; don't know why
                 // .catch(err => {
                 //     console.error({ err })
                 // })

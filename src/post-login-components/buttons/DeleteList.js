@@ -1,6 +1,6 @@
 import React from 'react'
-import config from '../config'
-import TripListContext from '../TripListContext'
+import config from '../../config'
+import TripListContext from '../../TripListContext'
 
 export default class DeleteList extends React.Component {
     
@@ -16,6 +16,8 @@ export default class DeleteList extends React.Component {
             return alert("Cannot delete a list containing items")
         }
 
+        const storedToken = window.localStorage.Authorization
+
         const deleteList = {
             id: list
         }
@@ -24,7 +26,7 @@ export default class DeleteList extends React.Component {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json',
-                'Authorization': `Bearer ${config.API_TOKEN}` 
+                'Authorization': `Bearer ${storedToken}` 
               },
             body: JSON.stringify(deleteList)
         }

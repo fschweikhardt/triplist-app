@@ -1,5 +1,5 @@
 import React from 'react'
-import TripListContext from './TripListContext'
+import TripListContext from '../TripListContext'
 import List from './List'
 import AddList from './buttons/AddList'
 

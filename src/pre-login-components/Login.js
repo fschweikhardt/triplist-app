@@ -1,7 +1,7 @@
 import React from 'react'
-import './App.css'
-import config from './config'
-import TripListContext from './TripListContext'
+import '../App.css'
+import config from '../config'
+import TripListContext from '../TripListContext'
 
 export default class Login extends React.Component {
 
