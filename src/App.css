@@ -17,6 +17,11 @@ main, header, footer, section, div {
 
 button {
   margin: 15px;
+  padding: 10px;
+}
+
+.btn-del {
+  background-color: red;
 }
 
 /* <-- fonts --> */

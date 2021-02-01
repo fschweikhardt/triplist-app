@@ -38,6 +38,7 @@ export default class DeleteItem extends React.Component {
 
         return (
             <button
+                className='btn-del'
                 type='button'
                 name='deleteItem'
                 id='deleteItem'
