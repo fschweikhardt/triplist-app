@@ -43,7 +43,7 @@ export default class DeleteItem extends React.Component {
                 id='deleteItem'
                 onClick={()=> this.handleDeleteItem(item_id)}
             >
-                delete
+                DELETE PLACE
             </button>
         )
     }

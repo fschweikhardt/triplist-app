@@ -5,6 +5,7 @@ import DeleteList from './buttons/DeleteList'
 import AddItem from './buttons/AddItem'
 import DeleteItem from './buttons/DeleteItem'
 
+
 export default class List extends React.Component { 
     
     constructor(props) {
@@ -28,28 +29,25 @@ export default class List extends React.Component {
         const itemsToList = items.filter( i => i.list_id === list)
 
         const compactList = 
-            <div>
+            <div className='List-compact'>
                 <br />
-                <h3>
+                <h3 onClick={this.toggleExpandButton}>
                     {this.props.title}
-                    <button
+                    {/* <button
                         onClick={this.toggleExpandButton}
                         >
                         hide/expand
-                    </button>
+                    </button> */}
                 </h3>
+                <br />
             </div>
 
         const expandedList = 
-            <div>
+            <div className='List-expanded'>
                 <br />
                 <h3>
                     {this.props.title}
-                    <button
-                        onClick={this.toggleExpandButton}
-                    >
-                        hide/expand
-                    </button>
+                    
                 </h3>
                 <ul>
                     {itemsToList.map( (item ) => {
@@ -73,6 +71,12 @@ export default class List extends React.Component {
                     id={this.props.id}
                 />
                 <br />
+                <br />
+                <button
+                        onClick={this.toggleExpandButton}
+                    >
+                        HIDE LIST
+                </button>
                 <br />
                 <DeleteList 
                     id={this.props.id}

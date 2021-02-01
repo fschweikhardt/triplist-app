@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 export default function LandingPage() {
 
     return (
-      <div className="App">
-        <header className="Header">
+      <div>
+        <header>
           TripList
         </header>
           <main>

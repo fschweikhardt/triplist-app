@@ -1,0 +1,182 @@
+/* css - mobile first */
+
+* {
+    box-sizing: border-box;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+/* <-- structure --> */
+
+main, header, footer {
+    text-align: center;
+}
+
+header footer {
+    background-color: rgb(45,45,45);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* <-- fonts --> */
+
+h1, h2, h3, p, a, ul, li {
+    font-family: Segoe UI, Frutiger, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: 500;
+    letter-spacing: .1em;
+}
+
+h3 {
+    font-size: 1.75em;
+    font-weight: 200;
+    line-height: 1em;
+}
+
+p {
+    font-size: 1.25em;
+    font-weight: 300;
+    word-spacing: .1em;
+}
+
+/* <-- navigation --> */
+
+nav {
+    display: flex;
+    justify-content: center;
+  }
+
+nav ul {
+    display: flex;
+    margin: 15px 0;
+    padding-left: 0;
+    list-style: none;
+
+  }
+  
+nav ul li a {
+    margin: 0 20px 0 0;
+    text-transform: lowercase;
+    color: blue;
+    font-size: .8em;
+    background-color: red;
+    padding: 10px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+/* <-- links --> */
+
+a {
+    font-size: 1em;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+a:link {
+    color: blue;
+  }
+  
+a:visited {
+    color: red;
+  }
+  
+a:hover {
+    background-color: green
+  }
+  
+a:active {
+    color: orange
+  } 
+
+
+/* <-- lists --> */
+
+ul {
+    list-style-type: none; 
+}
+
+li {
+    font-size: 1.5em;
+    font-weight: 400;
+    list-style-position: inside;
+}
+
+/* <-- images --> */
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* ---  Contact Form Design --- */
+
+form {
+    padding: 6px;
+  }
+  
+  form input, 
+  form textarea {
+    width: 100%;
+    margin: 20px;
+  }
+  
+  form textarea {
+    height: 160px;
+  }
+  
+/* <-- flexbox --> */
+
+.group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+.item {
+    flex: 1;
+    padding: 10px;
+}
+
+.itemDouble {
+    flex: 2;
+}
+
+
+/* <-- media --> */
+
+@media all and (min-width: 800px) {
+
+    section, h1 {
+      padding: 0 10%;
+    }
+
+    header .item {
+        margin-bottom: 20px;
+    }
+
+    .group {
+      flex-direction: row;
+    }
+
+    nav ul {
+        margin: 0;
+    }
+
+    nav ul li:last-child a {
+        margin-right: 100px;
+      }
+
+  }

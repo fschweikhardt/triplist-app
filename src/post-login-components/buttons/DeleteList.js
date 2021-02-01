@@ -44,7 +44,7 @@ export default class DeleteList extends React.Component {
         return (
             <button
                 onClick={this.handleDeleteList}>
-                Delete list
+                DELETE LIST
             </button>
         )
     }

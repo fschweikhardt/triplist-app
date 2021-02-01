@@ -2,8 +2,9 @@ import React from 'react'
 import '../App.css'
 import TripListContext from '../TripListContext'
 import DisplayLists from './DisplayLists'
+import Header from './Header'
 import config from '../config'
-
+import Footer from './Footer'
 
 export default class Home extends React.Component {
 
@@ -80,26 +81,12 @@ export default class Home extends React.Component {
         }
 
     return (
-        
             <div>
-                <header>
-                    TripList
-                </header>
-                <nav>
-                    <button
-                        onClick={this.handleLogout}
-                    >
-                        LOG OUT
-                    </button>
-                </nav>
+                <Header />
                 <main>
-                    <h1>
-                         Hello, {this.context.username}!
-                    </h1>
-                    <hr />
-                    <hr />
                     <DisplayLists />
                 </main>
+                <Footer />
             </div>
         )
     }

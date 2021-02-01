@@ -45,20 +45,23 @@ export default class AddList extends React.Component {
     render() {
 
         return (
-            <form onSubmit={this.handleAddList}>
+            <form onSubmit={this.handleAddList} style={{backgroundColor: "beige"}}>
+                <br />
                 <label htmlFor='newList'>
                     CREATE NEW LIST
-                    <input
-                        type='text'
-                        name='newList'
-                        id='newList'
-                        required
-                    />
                 </label>
+                <input
+                    type='text'
+                    name='newList'
+                    id='newList'
+                    required
+                />
                 <button
                     type='submit'>
                     SUBMIT
                 </button>
+                <br />
+                <br />
             </form>
         )
     }

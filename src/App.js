@@ -79,7 +79,7 @@ class App extends React.Component {
     
     return (
       <TripListContext.Provider value={value}>
-        <div className="App">
+        <div>
           <Switch>
             <Route 
               exact path='/'

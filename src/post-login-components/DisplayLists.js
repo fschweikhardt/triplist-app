@@ -1,6 +1,7 @@
 import React from 'react'
 import TripListContext from '../TripListContext'
 import List from './List'
+import './List.css'
 import AddList from './buttons/AddList'
 
 export default class DisplayLists extends React.Component {
@@ -11,10 +12,6 @@ export default class DisplayLists extends React.Component {
 
         return (
             <div>
-                <h2>
-                    Lists of places to go
-                </h2>   
-                
                <ul>
                    {this.context.lists.map( list => {
                        return (
@@ -30,10 +27,7 @@ export default class DisplayLists extends React.Component {
                        )
                    })}
                 </ul>
-                <br/>
-                <br />
                 <AddList />
-
             </div>
         )
     } 

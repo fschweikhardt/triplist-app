@@ -15,11 +15,11 @@ main, header, footer, section, div {
   text-align: center;
 }
 
-header {
+/* header {
   background-color: lightgray;
   padding-top: 10px;
   padding-bottom: 10px;
-}
+} */
 
 button {
   margin: 15px;
@@ -32,23 +32,42 @@ h1, h2, h3, p, a, ul, li {
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 4em;
   font-weight: 600;
 }
 
 h2 {
-  font-size: 2.5em;
+  font-size: 3em;
   font-weight: 500;
   letter-spacing: .1em;
 }
 
 h3 {
-  font-size: 1.75em;
+  font-size: 2em;
   font-weight: 200;
 }
 
 p {
-  font-size: 1.25em;
+  font-size: 1.5em;
   font-weight: 300;
   word-spacing: .1em;
+}
+
+/* <-- flexbox --> */
+
+.group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* text-transform: uppercase; */
+}
+
+.item {
+  flex: 1;
+  padding: 10px;
+}
+
+.itemDouble {
+  flex: 2;
 }
