@@ -6,10 +6,11 @@ export default class Footer extends React.Component {
         localStorage.clear()
         this.props.history.push('/')
     }
-    
+
     render() {
+        
         return (
-            <footer>
+            <footer style={{backgroundColor: "#F8F8FF"}}>
                 <br />
                 <h1>
                     TripList

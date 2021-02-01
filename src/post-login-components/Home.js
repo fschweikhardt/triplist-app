@@ -4,7 +4,7 @@ import TripListContext from '../TripListContext'
 import DisplayLists from './DisplayLists'
 import Header from './Header'
 import config from '../config'
-import Footer from './Footer'
+//import Footer from './Footer'
 
 export default class Home extends React.Component {
 
@@ -86,7 +86,17 @@ export default class Home extends React.Component {
                 <main>
                     <DisplayLists />
                 </main>
-                <Footer />
+                <footer style={{backgroundColor: "#F8F8FF"}}>
+                <br />
+                <h1>
+                    TripList
+                </h1>
+                <button
+                    onClick={this.handleLogout}
+                >
+                    LOG OUT
+                </button>
+            </footer>
             </div>
         )
     }

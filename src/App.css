@@ -15,12 +15,6 @@ main, header, footer, section, div {
   text-align: center;
 }
 
-/* header {
-  background-color: lightgray;
-  padding-top: 10px;
-  padding-bottom: 10px;
-} */
-
 button {
   margin: 15px;
 }
@@ -38,8 +32,7 @@ h1 {
 
 h2 {
   font-size: 3em;
-  font-weight: 500;
-  letter-spacing: .1em;
+  font-weight: 400;
 }
 
 h3 {
@@ -60,14 +53,26 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* text-transform: uppercase; */
 }
 
 .item {
   flex: 1;
-  padding: 10px;
 }
 
 .itemDouble {
   flex: 2;
+}
+
+/* <-- media --> */
+
+@media all and (min-width: 800px) {
+
+  .group {
+    flex-direction: row;
+  }
+
+  ul {
+      margin: 0;
+  }
+
 }

@@ -38,7 +38,11 @@ export default class Item extends React.Component {
 
         return (
             <div>
-                <p>{this.props.name}</p>
+                <h3 style={{
+                    padding:'25px', 
+                }}>
+                    {this.props.name}</h3>
+                <br />
                 <img 
                     src={this.state.photo}
                     alt={this.props.name}

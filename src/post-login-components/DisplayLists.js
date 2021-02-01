@@ -1,7 +1,6 @@
 import React from 'react'
 import TripListContext from '../TripListContext'
 import List from './List'
-import './List.css'
 import AddList from './buttons/AddList'
 
 export default class DisplayLists extends React.Component {

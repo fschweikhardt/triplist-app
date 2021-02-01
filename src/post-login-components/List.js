@@ -29,26 +29,20 @@ export default class List extends React.Component {
         const itemsToList = items.filter( i => i.list_id === list)
 
         const compactList = 
-            <div className='List-compact'>
+            <div style={{backgroundColor: "orange"}}>
                 <br />
-                <h3 onClick={this.toggleExpandButton}>
+                <h2 onClick={this.toggleExpandButton}>
                     {this.props.title}
-                    {/* <button
-                        onClick={this.toggleExpandButton}
-                        >
-                        hide/expand
-                    </button> */}
-                </h3>
+                </h2>
                 <br />
             </div>
 
         const expandedList = 
-            <div className='List-expanded'>
+            <div style={{backgroundColor: "azure"}}>
                 <br />
-                <h3>
-                    {this.props.title}
-                    
-                </h3>
+                <h2 style={{textDecoration: 'underline'}}>
+                    {this.props.title} 
+                </h2>
                 <ul>
                     {itemsToList.map( (item ) => {
                         return (
@@ -62,6 +56,8 @@ export default class List extends React.Component {
                                     item_id={item.item_id}
                                 />
                                 <br />
+                                <br />
+                                <hr />
                             </li>
                             )
                         })}
