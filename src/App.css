@@ -68,6 +68,14 @@ p {
   flex: 2;
 }
 
+/* <-- img --> */
+
+/* @media all and (max-width: 800px) {
+  .logo-footer {
+    display: none;
+  }
+} */
+
 /* <-- media --> */
 
 @media all and (min-width: 800px) {
@@ -82,6 +90,11 @@ p {
 
   .logo-top {
     display: none;
+  }
+
+  .world-map {
+    width: 400px;
+    height: auto;
   }
 
 }

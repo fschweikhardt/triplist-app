@@ -11,7 +11,7 @@ export default class Header extends React.Component {
         return(
             <header className='group'>
                 <img 
-                    className='item'
+                    className='item world-map'
                     src={worldMap} 
                     alt='world map' 
                     width='100%' 

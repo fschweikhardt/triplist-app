@@ -1,5 +1,6 @@
 import React from 'react'
 import '../App.css'
+import logo from '../images/logo.png'
 import TripListContext from '../TripListContext'
 import DisplayLists from './DisplayLists'
 import Header from './Header'
@@ -86,17 +87,25 @@ export default class Home extends React.Component {
                 <main>
                     <DisplayLists />
                 </main>
-                <footer style={{backgroundColor: "#F8F8FF"}}>
-                <br />
-                <h1>
-                    TripList
-                </h1>
-                <button
-                    onClick={this.handleLogout}
-                >
-                    LOG OUT
-                </button>
-            </footer>
+                <footer style={{backgroundColor: "#F8F8FF"}} className='group'>
+                    <img 
+                        className='logo-footer item'
+                        src={logo} 
+                        alt='logo' 
+                        width='100%'
+                        height='auto'
+                    />
+                    <div className='item'>
+                        <h1>
+                            TripList
+                        </h1>
+                        <button
+                            onClick={this.handleLogout}
+                        >
+                            LOG OUT
+                        </button>
+                    </div>
+                </footer>
             </div>
         )
     }
