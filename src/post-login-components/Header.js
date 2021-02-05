@@ -1,6 +1,6 @@
 import React from 'react'
 import TripListContext from '../TripListContext'
-import './Header.css'
+import worldMap from '../images/world-map.jpg'
 
 export default class Header extends React.Component {
 
@@ -9,8 +9,15 @@ export default class Header extends React.Component {
     render() {
 
         return(
-            <header className='Header'>
-                <h1>
+            <header className='group'>
+                <img 
+                    className='item'
+                    src={worldMap} 
+                    alt='world map' 
+                    width='100%' 
+                    height='auto'
+                />
+                <h1 className='item'>
                     Hello, {this.context.username}
                 </h1>
             </header>

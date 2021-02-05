@@ -21,7 +21,7 @@ button {
 }
 
 .btn-del {
-  background-color: red;
+  background-color: lightcyan;
 }
 
 /* <-- fonts --> */
@@ -78,6 +78,10 @@ p {
 
   ul {
       margin: 0;
+  }
+
+  .logo-top {
+    display: none;
   }
 
 }

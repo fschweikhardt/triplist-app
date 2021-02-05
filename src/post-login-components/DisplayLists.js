@@ -11,17 +11,22 @@ export default class DisplayLists extends React.Component {
 
         return (
             <div>
-               <ul>
+               <ul style={{backgroundColor: 'lightGrey'}} className='group'>
                    {this.context.lists.map( list => {
                        return (
-                           <li key={list.id}>
-                               <hr />
+                           <li 
+                                key={list.id} 
+                                style={{
+                                    margin: '10px', 
+                                    padding: '10px',
+                                    listStyle: 'none'
+                                }} 
+                                className='item'>
                                <List
                                     id={list.id}
                                     title={list.title}
                                     username={list.username}
                                 />
-                                <hr />
                            </li>
                        )
                    })}

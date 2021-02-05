@@ -1,5 +1,6 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
+import logo from './images/logo.png'
 import TripListContext from './TripListContext'
 import './App.css'
 import LandingPage from './pre-login-components/LandingPage'
@@ -80,6 +81,13 @@ class App extends React.Component {
     return (
       <TripListContext.Provider value={value}>
         <div>
+          <img 
+            className='logo-top'
+            src={logo} 
+            alt='logo' 
+            width='100%'
+            height='auto'
+          />
           <Switch>
             <Route 
               exact path='/'
