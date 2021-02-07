@@ -20,6 +20,7 @@ export default class Header extends React.Component {
                 <h1 className='item' style={{paddingTop: '20px'}}>
                     Hello, {this.context.username}
                 </h1>
+                
             </header>
         )
     }
