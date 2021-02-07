@@ -15,7 +15,7 @@ export default function LandingPage(props) {
             height='auto'
           />
         <main className='item'>
-          <h1>
+          <h1 style={{fontStyle: 'italic', opacity: '.9', color: '#235a87'}}>
             Store your trip ideas in one place
           </h1>
           <br />
@@ -23,9 +23,6 @@ export default function LandingPage(props) {
             GET STARTED
           </button>
           <br />
-          <br />
-          <p>Create different travel lists for your different types of trips. (eg. with partner, with in-laws, with friends...)
-          </p>
           <br />
         </main>
       </div>

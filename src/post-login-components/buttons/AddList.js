@@ -58,7 +58,8 @@ export default class AddList extends React.Component {
                     required
                 />
                 <button
-                    type='submit'>
+                    type='submit'
+                    className='btn-add-list'>
                     SUBMIT
                 </button>
                 <br />

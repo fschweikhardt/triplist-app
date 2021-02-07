@@ -23,6 +23,10 @@ button {
   opacity: .8;
 }
 
+.btn-add-list {
+  background-color: ghostwhite;
+}
+
 input {
   line-height: 2em;
   padding: 15px;
