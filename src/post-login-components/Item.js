@@ -26,7 +26,7 @@ export default class Item extends React.Component {
         .then(data => {
             console.log(data)
             this.setState({
-                photo: data.photos[0].src.small
+                photo: data.photos[0].src.medium
             })
         })
         .catch(err => {
@@ -46,6 +46,8 @@ export default class Item extends React.Component {
                 <img 
                     src={this.state.photo}
                     alt={this.props.name}
+                    width='95%'
+                    height='auto'
                 />
             </div>
         )
