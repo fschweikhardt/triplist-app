@@ -14,7 +14,7 @@ export default function LandingPage(props) {
             width='100%'
             height='auto'
           />
-        <main className='item' style={{paddingTop: '10px'}}>
+        <main className='item'>
           <h1>
             Store your trip ideas in one place
           </h1>

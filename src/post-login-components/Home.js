@@ -89,7 +89,7 @@ export default class Home extends React.Component {
                     <DisplayLists />
                     <AddList />
                 </main>
-                <footer style={{backgroundColor: "#F8F8FF"}} className='group'>
+                <footer style={{backgroundColor: "rgb(255,255,255"}} className='group'>
                     <img 
                         className='logo-footer item'
                         src={logo} 

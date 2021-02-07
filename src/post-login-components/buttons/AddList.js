@@ -45,7 +45,7 @@ export default class AddList extends React.Component {
     render() {
 
         return (
-            <form onSubmit={this.handleAddList} style={{backgroundColor: "beige"}}>
+            <form onSubmit={this.handleAddList} style={{backgroundColor: "rgb(244,196,48,.8)"}}>
                 <br />
                 <label htmlFor='newList'>
                     CREATE NEW LIST

@@ -56,10 +56,12 @@ export default class Register extends React.Component{
                 />
                 <form onSubmit={this.handleSubmit} className='item form-container'>
                     <h2>
-                        Sign up
+                        SIGN UP
                     </h2>
+                    <br />
+                    <br />
                     <label>
-                        email
+                        Email
                         <input
                             type='text'
                             id='email'
@@ -70,7 +72,7 @@ export default class Register extends React.Component{
                     </label>
                     <br />
                     <label htmlFor='username'>
-                        create username
+                        Create Username
                         <input
                             type='text'
                             id='username'
@@ -81,7 +83,7 @@ export default class Register extends React.Component{
                     </label>
                     <br />
                     <label>
-                        create password
+                        Create Password
                         <input
                             type='password'
                             id='password'

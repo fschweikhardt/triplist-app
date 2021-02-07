@@ -45,7 +45,7 @@ export default class AddItem extends React.Component {
         return (
             <form onSubmit={this.handleAddItem}>
                     <label htmlFor='newItem'>
-                        add place
+                        ADD PLACE
                         <input
                             type='text'
                             name='newItem'

@@ -59,10 +59,12 @@ export default class Login extends React.Component {
             />
             <form onSubmit={this.handleSubmit} className='item'>
                 <h2>
-                    Log in
+                    LOG IN
                 </h2>
+                <br />
+                <br />
                 <label>
-                    username
+                    Username
                     <input
                         type='text'
                         id='username'
@@ -72,7 +74,7 @@ export default class Login extends React.Component {
                 </label>
                 <br />
                 <label>
-                    password
+                    Password
                     <input
                         type='password'
                         id='password'
