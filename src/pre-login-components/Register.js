@@ -54,49 +54,49 @@ export default class Register extends React.Component{
                     width='100%'
                     height='auto'
                 />
-                <form onSubmit={this.handleSubmit} className='item'>
-                <h2>
-                    Sign up
-                </h2>
-                <label>
-                    email
-                    <input
-                        type='text'
-                        id='email'
-                        name='email'
-                        required
+                <form onSubmit={this.handleSubmit} className='item form-container'>
+                    <h2>
+                        Sign up
+                    </h2>
+                    <label>
+                        email
+                        <input
+                            type='text'
+                            id='email'
+                            name='email'
+                            required
+                            >
+                        </input>
+                    </label>
+                    <br />
+                    <label htmlFor='username'>
+                        create username
+                        <input
+                            type='text'
+                            id='username'
+                            name='username'
+                            required
+                            >
+                        </input>
+                    </label>
+                    <br />
+                    <label>
+                        create password
+                        <input
+                            type='password'
+                            id='password'
+                            name='password'
+                            required
                         >
-                    </input>
-                </label>
-                <br />
-                <label htmlFor='username'>
-                    create username
-                    <input
-                        type='text'
-                        id='username'
-                        name='username'
-                        required
-                        >
-                    </input>
-                </label>
-                <br />
-                <label>
-                    create password
-                    <input
-                        type='password'
-                        id='password'
-                        name='password'
-                        required
+                        </input>
+                    </label>
+                    <br />
+                    <button
+                        type='submit'
                     >
-                    </input>
-                </label>
-                <br />
-                <button
-                    type='submit'
-                >
-                    Submit
-                </button>
-                <br />    
+                        Submit
+                    </button>
+                    <br />    
                 </form>
             </div>
         )

@@ -14,7 +14,7 @@ export default function LandingPage(props) {
             width='100%'
             height='auto'
           />
-        <main className='item'>
+        <main className='item' style={{paddingTop: '10px'}}>
           <h1>
             Store your trip ideas in one place
           </h1>
@@ -22,6 +22,8 @@ export default function LandingPage(props) {
           <button onClick={handlePush}>
             GET STARTED
           </button>
+          <br />
+          <br />
           <p>Create different travel lists for your different types of trips. (eg. with partner, with in-laws, with friends...)
           </p>
           <br />

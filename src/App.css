@@ -22,6 +22,16 @@ button {
 
 input {
   line-height: 2em;
+  width: 100%;
+  padding: 15px;
+  margin: 20px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form-container {
+  padding: 15px;
 }
 
 /* .btn-del {
