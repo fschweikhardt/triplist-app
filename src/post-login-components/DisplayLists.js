@@ -10,7 +10,7 @@ export default class DisplayLists extends React.Component {
 
         return (
             <div>
-               <ul style={{backgroundColor: 'lightGrey'}} className='group-list'>
+               <ul style={{backgroundColor: 'lightGrey', padding: '20px'}} className='group-list'>
                    {this.context.lists.map( list => {
                        return (
                            <li 
