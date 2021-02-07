@@ -38,7 +38,7 @@ export default class List extends React.Component {
             </div>
 
         const expandedList = 
-            <div style={{backgroundColor: "azure"}}>
+            <div style={{backgroundColor: "AliceBlue"}}>
                 <br />
                 <h2 style={{textDecoration: 'underline'}}>
                     {this.props.title} 

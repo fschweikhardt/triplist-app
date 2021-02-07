@@ -50,6 +50,7 @@ export default class AddItem extends React.Component {
                             type='text'
                             name='newItem'
                             id='newItem'
+                            placeholder='e.g. Spain'
                             required
                         />
                     </label>

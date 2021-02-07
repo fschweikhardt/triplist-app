@@ -1,5 +1,6 @@
 import React from 'react'
 import '../App.css'
+import logo from '../images/logo.png'
 import config from '../config'
 import TripListContext from '../TripListContext'
 
@@ -48,8 +49,15 @@ export default class Login extends React.Component {
     render() {
         
     return (
-        <div>
-            <form onSubmit={this.handleSubmit}>
+        <div className='group login'>
+            <img 
+                className='logo-setup item'
+                src={logo} 
+                alt='logo' 
+                width='100%'
+                height='auto'
+            />
+            <form onSubmit={this.handleSubmit} className='item'>
                 <h2>
                     Log in
                 </h2>
@@ -79,7 +87,7 @@ export default class Login extends React.Component {
                     SUBMIT
                 </button>
                 <br /> 
-            </form>  
+            </form> 
         </div>
     )
 }

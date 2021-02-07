@@ -1,7 +1,6 @@
 import React from 'react'
 import TripListContext from '../TripListContext'
 import List from './List'
-import AddList from './buttons/AddList'
 
 export default class DisplayLists extends React.Component {
 
@@ -32,7 +31,6 @@ export default class DisplayLists extends React.Component {
                        )
                    })}
                 </ul>
-                <AddList />
             </div>
         )
     } 

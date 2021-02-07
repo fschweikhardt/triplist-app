@@ -3,6 +3,7 @@ import '../App.css'
 import logo from '../images/logo.png'
 import TripListContext from '../TripListContext'
 import DisplayLists from './DisplayLists'
+import AddList from './buttons/AddList'
 import Header from './Header'
 import config from '../config'
 //import Footer from './Footer'
@@ -86,6 +87,7 @@ export default class Home extends React.Component {
                 <Header />
                 <main>
                     <DisplayLists />
+                    <AddList />
                 </main>
                 <footer style={{backgroundColor: "#F8F8FF"}} className='group'>
                     <img 

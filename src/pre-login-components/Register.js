@@ -1,6 +1,7 @@
 import React from 'react'
 import '../App.css'
 import TripListContext from '../TripListContext'
+import logo from '../images/logo.png'
 import config from '../config'
 
 export default class Register extends React.Component{
@@ -45,8 +46,15 @@ export default class Register extends React.Component{
     render() {
 
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
+            <div className='group register'>
+                <img 
+                    className='logo-setup item'
+                    src={logo} 
+                    alt='logo' 
+                    width='100%'
+                    height='auto'
+                />
+                <form onSubmit={this.handleSubmit} className='item'>
                 <h2>
                     Sign up
                 </h2>

@@ -54,6 +54,7 @@ export default class AddList extends React.Component {
                     type='text'
                     name='newList'
                     id='newList'
+                    placeholder='e.g. Trip with friends'
                     required
                 />
                 <button
