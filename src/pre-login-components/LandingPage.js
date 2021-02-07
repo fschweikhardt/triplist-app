@@ -1,9 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import logo from '../images/logo.png'
 
-export default function LandingPage() {
-
+export default function LandingPage(props) {
+    function handlePush() {
+      props.history.push('/welcome')
+    }
     return (
       <div className='group landing-page'>
         <img 
@@ -15,11 +16,12 @@ export default function LandingPage() {
           />
         <main className='item'>
           <h1>
-            Store all your trip ideas in one place
+            Store your trip ideas in one place
           </h1>
-          <Link to='/welcome'>
-              GET STARTED
-          </Link>
+          <br />
+          <button onClick={handlePush}>
+            GET STARTED
+          </button>
           <p>Create different travel lists for your different types of trips. (eg. with partner, with in-laws, with friends...)
           </p>
           <br />
