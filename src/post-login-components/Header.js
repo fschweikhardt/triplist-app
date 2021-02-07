@@ -9,7 +9,7 @@ export default class Header extends React.Component {
     render() {
 
         return(
-            <header className='group' style={{backgroundColor: 'rgb(35,90,135,.2)'}}>
+            <header className='group Header'>
                 <img 
                     className='item world-map'
                     src={worldMap} 

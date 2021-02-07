@@ -57,7 +57,7 @@ export default class Login extends React.Component {
                 width='100%'
                 height='auto'
             />
-            <form onSubmit={this.handleSubmit} className='item'>
+            <form onSubmit={this.handleSubmit} className='item form-container'>
                 <h2>
                     LOG IN
                 </h2>
