@@ -84,8 +84,9 @@ export default class Home extends React.Component {
 
         // console.log(this.context.lists.length)
         // let manageLists = ''
-        // if (!this.context.lists.length === 0) 
-        //   manageLists = <DisplayLists />
+        // if (this.context.lists.length === 2) {
+        //     return manageLists = <DisplayLists />
+        // }
 
     return (
             <div>

@@ -88,6 +88,10 @@ p {
   justify-content: center;
 }
 
+.itemUsername {
+  flex-wrap: wrap;
+}
+
 .item {
   flex: 1;
 }
