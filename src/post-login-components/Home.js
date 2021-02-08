@@ -82,6 +82,11 @@ export default class Home extends React.Component {
             })
         }
 
+        // console.log(this.context.lists.length)
+        // let manageLists = ''
+        // if (!this.context.lists.length === 0) 
+        //   manageLists = <DisplayLists />
+
     return (
             <div>
                 <Header />
