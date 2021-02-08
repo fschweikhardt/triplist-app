@@ -28,7 +28,9 @@ export default function Welcome(props) {
                             height='auto'
                         />
                         <section className='item'>
-                            <h2>Log In</h2>
+                            <h2 style={{color: 'rgb(35,90,135)', fontWeight: 'bold'}}>
+                                Log In
+                            </h2>
                             <button onClick={login}>
                                 LOG IN
                             </button>
@@ -36,7 +38,9 @@ export default function Welcome(props) {
                         <br />
                         <br />
                         <section>
-                            <h2>Register</h2>
+                            <h2 style={{color: 'rgb(35,90,135)', fontWeight: 'bold'}}>
+                                Register
+                            </h2>
                             <button onClick={register}>
                                 REGISTER
                             </button>

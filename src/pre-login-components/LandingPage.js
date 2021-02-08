@@ -15,7 +15,7 @@ export default function LandingPage(props) {
             height='auto'
           />
         <main className='item'>
-          <h1 style={{fontStyle: 'italic', color: '#235a87'}}>
+          <h1 style={{fontStyle: 'italic', color: 'rgb(35,90,135)'}}>
             Store your trip ideas in one place
           </h1>
           <br />

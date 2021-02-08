@@ -55,7 +55,7 @@ export default class Register extends React.Component{
                     height='auto'
                 />
                 <form onSubmit={this.handleSubmit} className='item form-container'>
-                    <h2>
+                    <h2 style={{color: 'rgb(35,90,135)', fontWeight: 'bold'}}>
                         SIGN UP
                     </h2>
                     <br />
