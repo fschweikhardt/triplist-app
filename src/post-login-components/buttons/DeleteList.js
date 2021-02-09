@@ -13,7 +13,7 @@ export default class DeleteList extends React.Component {
         const itemsToList = items.filter( i => i.list_id === list)
         
         if (itemsToList.length !== 0) {
-            return alert("Cannot delete a list containing items")
+            return alert("Please delete your places before deleting the list")
         }
 
         const storedToken = window.localStorage.Authorization
