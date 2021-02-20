@@ -46,7 +46,9 @@ export default class AddItem extends React.Component {
             <form onSubmit={this.handleAddItem}>
                     <label htmlFor='newItem'>
                         ADD PLACE
+                        <br />
                         <input
+                            style={{width: '200px'}}
                             type='text'
                             name='newItem'
                             id='newItem'
@@ -56,7 +58,7 @@ export default class AddItem extends React.Component {
                     </label>
                     <button
                         type='submit'>
-                        GO
+                        ADD
                     </button>
                 </form>
         )

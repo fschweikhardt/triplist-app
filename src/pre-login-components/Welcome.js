@@ -44,6 +44,10 @@ export default function Welcome(props) {
                             <button onClick={register}>
                                 REGISTER
                             </button>
+                            <h2 style={{color: 'rgb(35,90,135)', fontWeight: 'bold', marginTop: '40px'}}>
+                                Demo Account
+                            </h2>
+                            <p>to access the demo account click 'LOG IN'</p>
                         </section>
                     </div>
                 </Route>

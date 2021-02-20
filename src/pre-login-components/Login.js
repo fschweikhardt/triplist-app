@@ -89,7 +89,15 @@ export default class Login extends React.Component {
                     SUBMIT
                 </button>
                 <br /> 
-            </form> 
+                <h2 style={{marginTop: '30px'}}>
+                Demo Account
+                </h2>
+                <p>
+                    Username: demo
+                    <br />
+                    Password: demo
+                </p>
+            </form>
         </div>
     )
 }

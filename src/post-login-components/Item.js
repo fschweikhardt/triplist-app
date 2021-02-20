@@ -24,7 +24,6 @@ export default class Item extends React.Component {
             return res.json()
         })
         .then(data => {
-            console.log(data)
             this.setState({
                 photo: data.photos[0].src.medium
             })

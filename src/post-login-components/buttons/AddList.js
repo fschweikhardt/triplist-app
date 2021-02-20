@@ -54,14 +54,16 @@ export default class AddList extends React.Component {
                 <br />
                 <label htmlFor='newList'>
                     CREATE NEW LIST
+                    <br />
+                    <input
+                        style={{width: '300px'}}
+                        type='text'
+                        name='newList'
+                        id='newList'
+                        placeholder='e.g. Trip with friends'
+                        required
+                    />
                 </label>
-                <input
-                    type='text'
-                    name='newList'
-                    id='newList'
-                    placeholder='e.g. Trip with friends'
-                    required
-                />
                 <button
                     type='submit'
                     className='btn-add-list'>

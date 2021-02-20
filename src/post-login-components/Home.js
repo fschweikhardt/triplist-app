@@ -6,7 +6,6 @@ import DisplayLists from './DisplayLists'
 import AddList from './buttons/AddList'
 import Header from './Header'
 import config from '../config'
-//import Footer from './Footer'
 
 export default class Home extends React.Component {
 
@@ -81,12 +80,6 @@ export default class Home extends React.Component {
                 // })
             })
         }
-
-        // console.log(this.context.lists.length)
-        // let manageLists = ''
-        // if (this.context.lists.length === 2) {
-        //     return manageLists = <DisplayLists />
-        // }
 
     return (
             <div>

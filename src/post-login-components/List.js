@@ -72,7 +72,6 @@ export default class List extends React.Component {
                     >
                         HIDE LIST
                 </button>
-                <br />
                 <DeleteList 
                     id={this.props.id}
                 />
