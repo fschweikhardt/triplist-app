@@ -17,10 +17,11 @@ export default class List extends React.Component {
 
     static contextType = TripListContext
     
-    toggleExpandButton = () => 
+    toggleExpandButton = () => {
         this.setState(prevState => ({
             hide: !prevState.hide
         }))
+    }
 
     render() {
 
