@@ -18,4 +18,8 @@ This is a fullstack app using React, CSS, Node, Express, and PostgreSQL.
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-![Image of Yaktocat](https://github.com/fschweikhardt/triplist-app/blob/main/screenshots/TripList-app-screenshot-1.png)
+![Screenshot of TripList](https://github.com/fschweikhardt/triplist-app/blob/main/screenshots/TripList-app-screenshot-1.png)
+
+![Screenshot of TripList](https://github.com/fschweikhardt/triplist-app/blob/main/screenshots/TripList-app-screenshot-2.png)
+
+![Screenshot of TripList](https://github.com/fschweikhardt/triplist-app/blob/main/screenshots/TripList-app-screenshot-3.png)
