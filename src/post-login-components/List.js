@@ -31,11 +31,12 @@ export default class List extends React.Component {
 
         const compactList = 
             <div style={{backgroundColor: "ghostWhite", padding: '10px'}}>
-                <br />
-                <h2 onClick={this.toggleExpandButton}>
-                    {this.props.title}
-                </h2>
-                <br />
+                
+                <button onClick={this.toggleExpandButton}>
+                    <h2 >
+                        {this.props.title}
+                    </h2>
+                </button>
             </div>
 
         const expandedList = 
