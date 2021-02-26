@@ -46,7 +46,7 @@ export default class Item extends React.Component {
                     src={this.state.photo}
                     alt={this.props.name}
                     width='95%'
-                    height='auto'
+                    height='350px'
                 />
             </div>
         )
