@@ -23,3 +23,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ![Screenshot of TripList](https://github.com/fschweikhardt/triplist-app/blob/main/screenshots/TripList-app-screenshot-2.png)
 
 ![Screenshot of TripList](https://github.com/fschweikhardt/triplist-app/blob/main/screenshots/TripList-app-screenshot-3.png)
+
+## To Do's
+
+- The styling is fine, but my intention is to add a responsive D3 map or globe. This map will coorespond to the places from the lists. 
