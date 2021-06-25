@@ -3,13 +3,22 @@ import '../App.css'
 import logo from '../images/logo.png'
 import config from '../config'
 import TripListContext from '../TripListContext'
+import { BeatSpinners } from 'react-spinners'
 
 export default class Login extends React.Component {
 
     static contextType = TripListContext
 
+    state = {
+        loading: false
+    }
+    
     handleSubmit = (e) => {
         e.preventDefault()
+
+        this.setState({
+            loading: true
+        })
 
         const userLogin = {
             username: e.target.username.value,
@@ -57,6 +66,7 @@ export default class Login extends React.Component {
                 width='100%'
                 height='auto'
             />
+            {this.state.loading ? <BeatSpinners loading /> : 
             <form onSubmit={this.handleSubmit} className='item form-container'>
                 <h2 style={{color: 'rgb(35,90,135)', fontWeight: 'bold'}}>
                     LOG IN
@@ -98,6 +108,7 @@ export default class Login extends React.Component {
                     Password: demo
                 </p>
             </form>
+            }
         </div>
     )
 }
