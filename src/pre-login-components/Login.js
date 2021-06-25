@@ -3,7 +3,7 @@ import '../App.css'
 import logo from '../images/logo.png'
 import config from '../config'
 import TripListContext from '../TripListContext'
-import { BeatSpinners } from 'react-spinners'
+import { BeatLoader } from 'react-spinners'
 
 export default class Login extends React.Component {
 
@@ -53,6 +53,9 @@ export default class Login extends React.Component {
             }) 
         
         e.target.reset()
+        // this.setState({
+        //     loading: false
+        // })
     }
 
     render() {
@@ -66,7 +69,7 @@ export default class Login extends React.Component {
                 width='100%'
                 height='auto'
             />
-            {this.state.loading ? <BeatSpinners loading /> : 
+            {this.state.loading ? <BeatLoader loading/> : null}
             <form onSubmit={this.handleSubmit} className='item form-container'>
                 <h2 style={{color: 'rgb(35,90,135)', fontWeight: 'bold'}}>
                     LOG IN
@@ -108,7 +111,6 @@ export default class Login extends React.Component {
                     Password: demo
                 </p>
             </form>
-            }
         </div>
     )
 }

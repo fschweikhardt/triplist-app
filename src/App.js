@@ -12,7 +12,7 @@ import Home from './post-login-components/Home'
 class App extends React.Component {
 
   state = {
-    username: 'no one',
+    username: '',
     lists: [],
     items: []
   }
