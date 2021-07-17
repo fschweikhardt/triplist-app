@@ -31,7 +31,7 @@ export default class DeleteList extends React.Component {
             body: JSON.stringify(deleteList)
         }
 
-        fetch(`${config.API_ENDPOINT}/api/lists`, options)
+        fetch(`${config.API_BASE_URL}/api/lists`, options)
             .catch(err => {
                 console.error({ err })
             })  
