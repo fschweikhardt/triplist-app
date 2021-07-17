@@ -23,7 +23,7 @@ export default class DeleteItem extends React.Component {
             body: JSON.stringify(deleteItem)
         }
 
-        fetch(`${config.API_ENDPOINT}/api/items`, options)
+        fetch(`${config.API_BASE_URL}/api/items`, options)
             .catch(err => {
                 console.error({ err })
             }) 

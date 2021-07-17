@@ -25,7 +25,7 @@ export default class AddList extends React.Component {
             body: JSON.stringify(newList)
         }
 
-        fetch(`${config.API_ENDPOINT}/api/lists`, options)
+        fetch(`${config.API_BASE_URL}/api/lists`, options)
             .then(res => {
                 if (!res.ok) {
                     return res.json().then(e => Promise.reject(e))

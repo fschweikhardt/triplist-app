@@ -26,7 +26,7 @@ export default class Register extends React.Component{
             body: JSON.stringify(newUser)
         }
 
-        fetch(`${config.API_ENDPOINT}/api/register`, options)
+        fetch(`${config.API_BASE_URL}/api/register`, options)
             .then(res => {
                 if (!res.ok) {
                     alert('Choose a different username')
