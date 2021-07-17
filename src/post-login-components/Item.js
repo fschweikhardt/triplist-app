@@ -4,7 +4,8 @@ import config from '../config'
 export default class Item extends React.Component {
 
     state = {
-        photo: ''
+        displayPhoto: '',
+        fetchPhotosData: ''
     }
 
     componentDidMount() {
@@ -12,7 +13,7 @@ export default class Item extends React.Component {
         let place = this.props.name
         let baseUrl = 'https://api.pexels.com/v1/search?'
 
-        fetch(`${baseUrl}orientation=landscape&per_page=1&query=${place}`, {
+        fetch(`${baseUrl}orientation=landscape&per_page=2&query=${place}`, {
             headers: {
                 Authorization: `${config.IMG_KEY}`
             }
@@ -25,18 +26,30 @@ export default class Item extends React.Component {
         })
         .then(data => {
             this.setState({
-                photo: data.photos[0].src.medium
+                displayPhoto: data.photos[0].src.medium
+            })
+            this.setState({
+                fetchPhotosData: data
             })
         })
         .catch(err => {
             console.error({ err })
         })
     }
+
+    handleChangePhoto = () => {
+        // const { displayPhoto } = this.state
+        const { fetchPhotosData } = this.state
+        this.setState({
+            displayPhoto: fetchPhotosData.photos[1].src.medium
+        })
+    }
+
     render() {
+        console.log(this.state.fetchPhotosData)
         
         let imgSize;
         if (window.innerWidth > 800) {
-            console.log(window.innerWidth)
             imgSize = (window.innerWidth / 2 - 100) + 'px'
         } else {
             imgSize = (window.innerWidth - 100) + 'px'
@@ -50,12 +63,15 @@ export default class Item extends React.Component {
                     {this.props.name}
                 </h3>
                 <br />
+                {/* <div style={{backgroundImage: this.state.displayPhoto}}> */}
                 <img 
-                    src={this.state.photo}
+                    src={this.state.displayPhoto}
                     alt={this.props.name}
                     width={imgSize}
                     height='auto'
+                    onClick={this.handleChangePhoto}
                 />
+                {/* </div> */}
             </div>
         )
     }
