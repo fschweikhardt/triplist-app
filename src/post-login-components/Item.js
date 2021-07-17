@@ -32,21 +32,29 @@ export default class Item extends React.Component {
             console.error({ err })
         })
     }
-
     render() {
+        
+        let imgSize;
+        if (window.innerWidth > 800) {
+            console.log(window.innerWidth)
+            imgSize = (window.innerWidth / 2 - 100) + 'px'
+        } else {
+            imgSize = (window.innerWidth - 100) + 'px'
+        }
 
         return (
             <div>
                 <h3 style={{
                     padding:'25px', 
                 }}>
-                    {this.props.name}</h3>
+                    {this.props.name}
+                </h3>
                 <br />
                 <img 
                     src={this.state.photo}
                     alt={this.props.name}
-                    width='95%'
-                    height='350px'
+                    width={imgSize}
+                    height='auto'
                 />
             </div>
         )
