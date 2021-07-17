@@ -24,7 +24,7 @@ export default class AddItem extends React.Component {
               },
             body: JSON.stringify(item)
         }
-          fetch(`${config.API_ENDPOINT}/api/items`, options)
+          fetch(`${config.API_BASE_URL}/api/items`, options)
             .then(res => {
                 if (!res.ok) {
                     return res.json().then(e => Promise.reject(e))
