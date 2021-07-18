@@ -76,7 +76,7 @@ export default class Login extends React.Component {
                 </h2>
                 <br />
                 <br />
-                <label>
+                <label htmlFor='username'>
                     Username
                     <input
                         type='text'
@@ -86,7 +86,7 @@ export default class Login extends React.Component {
                     </input>
                 </label>
                 <br />
-                <label>
+                <label htmlFor='password'>
                     Password
                     <input
                         type='password'
