@@ -3,13 +3,34 @@ import '../App.css'
 import TripListContext from '../TripListContext'
 import logo from '../images/logo.png'
 import config from '../config'
+// import { getByTitle } from '@testing-library/react'
 
 export default class Register extends React.Component{
 
     static contextType = TripListContext
 
+    state = {
+        passwordValidation: {
+            value: undefined,
+            touched: false,
+        }
+    }
+
+    updatePassword = e => {
+        this.setState({
+            passwordValidation: {
+                value: e, 
+                touched: true
+            }
+        })
+    }
+
     handleSubmit = (e) => {
         e.preventDefault()
+
+        if (this.state.passwordValidation.value.length < 4) {
+           return alert("that's hackable")
+        }
 
         const newUser = {
             username: e.target.username.value,
@@ -43,6 +64,38 @@ export default class Register extends React.Component{
         e.target.reset()
     }
 
+    //-----> validation
+
+    validatePassword() {
+        let password = this.state.passwordValidation.value.trim()
+        if (password.length < 4) {
+            return (
+                <div>ENTER A LONGER PASSWORD</div>
+            )
+        } else return
+    }
+
+    // validateTitle() {
+    //     let title = this.state.title.value.trim()
+    //     if ( title.length === 0 ) {
+    //         return 'Enter a folder title'
+    //     } else if ( title.length < 4 ) {
+    //         return 'Enter a longer title'
+    //     }
+    // }
+
+    // <input 
+    //     type='text' 
+    //     name='title' 
+    //     id='title'
+    //     onChange={(e)=> this.updateName(e.target.value)}
+    //     required
+    // />
+    //     {this.state.title.touched && <ValidationError message={nameError} />}
+
+    //-----> validation end
+
+
     render() {
 
         return (
@@ -60,10 +113,10 @@ export default class Register extends React.Component{
                     </h2>
                     <br />
                     <br />
-                    <label>
+                    <label htmlFor='email'>
                         Email
                         <input
-                            type='text'
+                            type='email'
                             id='email'
                             name='email'
                             required
@@ -82,16 +135,18 @@ export default class Register extends React.Component{
                         </input>
                     </label>
                     <br />
-                    <label>
+                    <label htmlFor='password'>
                         Create Password
                         <input
                             type='password'
                             id='password'
                             name='password'
+                            onChange={e => this.updatePassword(e.target.value)}
                             required
                         >
                         </input>
                     </label>
+                    {this.state.passwordValidation.touched && this.validatePassword()}
                     <br />
                     <button
                         type='submit'
