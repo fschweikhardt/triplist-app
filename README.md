@@ -27,3 +27,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ## To Do's
 
 - The styling is fine, but my intention is to add a responsive D3 map or globe. This map will coorespond to the places from the lists. 
+- add validation on email registration & password
+- Use Google API to get accurate location names
+- Maybe use Google Places to get info about a place. Then set a "trip style" that would gives results related to the type of trip.
