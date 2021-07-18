@@ -29,7 +29,7 @@ export default class Register extends React.Component{
         e.preventDefault()
 
         if (this.state.passwordValidation.value.length < 4) {
-           return alert("that's hackable")
+           return alert(`that's hackable`)
         }
 
         const newUser = {
