@@ -99,7 +99,8 @@ p {
 
 /* <-- page formatting --> */
 .landing-page {
-  margin: 20px 30px 0px 30px;
+  /* margin: 20px 30px 0px 30px; */
+  /* background-image: url(./images/landingPage.svg); */
 }
 
 

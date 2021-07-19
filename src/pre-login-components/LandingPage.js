@@ -1,5 +1,7 @@
 import React from 'react'
 import logo from '../images/logo.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPaperPlane } from '@fortawesome/free-regular-svg-icons'
 
 export default function LandingPage(props) {
     function handlePush() {
@@ -14,6 +16,7 @@ export default function LandingPage(props) {
             width='100%'
             height='auto'
           />
+        {/* <FontAwesomeIcon icon={faPaperPlane} size='9x'/> */}
         <main className='item'>
           <h1 style={{fontStyle: 'italic', color: 'rgb(35,90,135)'}}>
             Store your trip ideas in one place
