@@ -51,7 +51,7 @@ export default function LandingPage(props) {
             style={{
               color:'white', 
               marginTop: '30px',
-              backgroundColor: 'rgb(0,150,225)', 
+              backgroundColor: 'rgba(0,150,225, .9)', 
               borderRadius: '10px'}}
           >
             <b>GET STARTED</b>
