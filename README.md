@@ -26,7 +26,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## To Do's
 
-- D3 globe
-- add validation on password
 - Use Google API to get accurate location names
+- D3 globe
+- add location to globe
+
 - Maybe use Google Places to get info about a place. Then set a "trip style" that would gives results related to the type of trip.
