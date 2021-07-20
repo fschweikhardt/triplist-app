@@ -9,7 +9,7 @@ export default function LandingPage(props) {
     }
     return (
       <div className='group landing-page'>
-        <div className='item' 
+        <div className='item group' 
           style={{
             display: 'flex', 
             justifyContent: 'center'
@@ -27,10 +27,13 @@ export default function LandingPage(props) {
         <div 
           className='item group' 
           style={{
+            // backgroundColor: 'rgb(20,42,69,.4)',
+            padding: '20px',
+            marginBottom: '50px',
             display: 'flex', 
             flexDirection: 'column', 
             justifyContent: 'center', 
-            marginRight: '30px'
+            margin: '0 30px'
           }}>
           <h1 
             style={{
@@ -45,9 +48,8 @@ export default function LandingPage(props) {
             onClick={handlePush}
             style={{
               color:'white', 
-              padding: '20px', 
               marginTop: '30px',
-              backgroundColor: 'rgb(20,42,69)', 
+              backgroundColor: 'rgb(0,150,225)', 
               borderRadius: '10px'}}
           >
             <b>GET STARTED</b>
