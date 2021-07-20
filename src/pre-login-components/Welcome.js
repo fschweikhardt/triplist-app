@@ -24,7 +24,7 @@ export default function Welcome(props) {
                             className='logo-setup item'
                             src={logo} 
                             alt='logo' 
-                            width='auto'
+                            width='100%'
                             height='auto'
                         />
                         <section className='item'>
