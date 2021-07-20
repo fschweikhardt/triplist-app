@@ -31,3 +31,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 - add location to globe
 
 - Maybe use Google Places to get info about a place. Then set a "trip style" that would gives results related to the type of trip.
+
+## Thanks to...
+- Font Awesome www.fontawesome.com
+- BGJar www.bgjar.com
+...for making this project possible!
