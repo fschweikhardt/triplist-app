@@ -9,13 +9,6 @@ export default function LandingPage(props) {
     }
     return (
       <div className='group landing-page'>
-        {/* <img 
-            className='logo-setup item'
-            src={logo} 
-            alt='logo' 
-            width='100%'
-            height='auto'
-          /> */}
         <div className='item' 
           style={{
             display: 'flex', 

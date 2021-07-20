@@ -115,9 +115,9 @@ p {
     display: none;
   }
 
-  .logo-setup {
+  /* .logo-setup {
     display: none;
-  }
+  } */
 }
 
 /* <-- media --> */
@@ -135,6 +135,10 @@ p {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .logo-setup {
+    max-width: 500px;
+  }
+
   ul {
       margin: 0;
   }
@@ -148,7 +152,6 @@ p {
     height: auto;
   }
 
-  /* .landing-page > .item,  */
   .login > .item,
   .register > .item {
     margin: 80px 10px 10px 10px;

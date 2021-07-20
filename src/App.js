@@ -81,13 +81,6 @@ class App extends React.Component {
     return (
       <TripListContext.Provider value={value}>
         <div>
-          <img 
-            className='logo-top'
-            src={logo} 
-            alt='logo' 
-            width='100%'
-            height='auto'
-          />
           <Switch>
             <Route 
               exact path='/'
