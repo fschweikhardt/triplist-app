@@ -60,6 +60,7 @@ export default function LandingPage(props) {
             <b>GET STARTED</b>
           </button>
         </div>
+          {/* <br />
           <br />
           <br />
           <br />
@@ -97,13 +98,7 @@ export default function LandingPage(props) {
           <br />
           <br />
           <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
+          <br /> */}
       </div>
     )
   }
