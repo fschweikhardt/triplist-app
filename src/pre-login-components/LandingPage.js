@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from '../images/logo.png'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPaperPlane } from '@fortawesome/free-regular-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faPaperPlane } from '@fortawesome/free-regular-svg-icons'
 
 export default function LandingPage(props) {
     function handlePush() {
