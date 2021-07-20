@@ -12,12 +12,15 @@ export default function LandingPage(props) {
         <div className='item group' 
           style={{
             display: 'flex', 
-            justifyContent: 'center'
+            justifyContent: 'center',
+            flexDirection: 'row',
+            marginBottom: '30px'
           }}>
           <h1 style={{
-            fontSize: '3.5em',
+            fontSize: '4em',
             fontStyle: 'italic', 
-            color: 'white'
+            color: 'white',
+            marginTop: '30px'
             }}>
             TRIPLIST
           </h1>
