@@ -1,0 +1,158 @@
+/* css - mobile first */
+
+* {
+    box-sizing: border-box;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    font-family: Segoe UI, Frutiger, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
+    text-align: center;
+  }
+  
+  /* <-- structure --> */
+  
+  main, header, footer, section, div {
+    text-align: center;
+  }
+  
+  button {
+    margin: 1em;
+    padding: 1em 1.5em;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(35,90,135,.6);
+    opacity: .8;
+  }
+  
+  .btn-add-list {
+    background-color: ghostwhite;
+  }
+  
+  input {
+    line-height: 2em;
+    padding: 15px;
+    margin: 20px 0;
+    width: 100%;
+    border: none;
+    background: rgb(35,90,135,.1);
+  }
+  
+  input[type="text"] {
+      font-size: 18px;
+    }
+  
+  label {
+    font-size: 20px;
+  }
+  
+  .form-container {
+    margin: 0 10%;
+  }
+  
+  .Header {
+    background-color: rgb(35,90,135,.2);
+  }
+  
+  /* <-- fonts --> */
+  
+  h1, h2, h3, p, a, ul, li {
+    font-family: Segoe UI, Frutiger, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+    word-break: break-word;
+  }
+  
+  h2 {
+    font-size: 2em;
+    font-weight: 400;
+  }
+  
+  h3 {
+    font-size: 1.5em;
+    font-weight: 200;
+  }
+  
+  p {
+    font-size: 1.25em;
+    font-weight: 300;
+    word-spacing: .1em;
+  }
+  
+  /* <-- flexbox --> */
+  
+  .group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .item {
+    flex: 1;
+  }
+  
+  .itemDouble {
+    flex: 2;
+  }
+  
+  /* <-- page formatting --> */
+  .landing-page {
+    background-image: url(./images/landingPage.svg);
+  }
+  
+  
+  /* <-- img --> */
+  
+  @media all and (max-width: 800px) {
+    .logo-footer {
+      display: none;
+    }
+  
+    .logo-setup {
+      display: none;
+    }
+  }
+  
+  /* <-- media --> */
+  
+  @media all and (min-width: 800px) {
+  
+    .group {
+      display: flex;
+      flex-direction: row;
+      justify-content: center
+    }
+  
+    .group-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    ul {
+        margin: 0;
+    }
+  
+    .logo-top {
+      display: none;
+    }
+  
+    .world-map {
+      width: 400px;
+      height: auto;
+    }
+  
+    /* .landing-page > .item,  */
+    .login > .item,
+    .register > .item {
+      margin: 80px 10px 10px 10px;
+      padding: 20px;
+    }
+  
+    .Header {
+      background-color: rgb(255,255,255);
+    }
+  
+  }
