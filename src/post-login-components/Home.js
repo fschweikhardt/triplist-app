@@ -6,6 +6,7 @@ import DisplayLists from './DisplayLists'
 import AddList from './buttons/AddList'
 import Header from './Header'
 import config from '../config'
+// import Globe from './Globe'
 
 export default class Home extends React.Component {
 
@@ -84,6 +85,7 @@ export default class Home extends React.Component {
     return (
             <div>
                 <Header />
+                {/* <Globe /> */}
                 <main>
                     <DisplayLists />
                     <AddList />

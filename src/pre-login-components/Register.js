@@ -3,7 +3,6 @@ import '../App.css'
 import TripListContext from '../TripListContext'
 import logo from '../images/logo.png'
 import config from '../config'
-// import { getByTitle } from '@testing-library/react'
 
 export default class Register extends React.Component{
 
@@ -74,24 +73,6 @@ export default class Register extends React.Component{
             )
         } else return
     }
-
-    // validateTitle() {
-    //     let title = this.state.title.value.trim()
-    //     if ( title.length === 0 ) {
-    //         return 'Enter a folder title'
-    //     } else if ( title.length < 4 ) {
-    //         return 'Enter a longer title'
-    //     }
-    // }
-
-    // <input 
-    //     type='text' 
-    //     name='title' 
-    //     id='title'
-    //     onChange={(e)=> this.updateName(e.target.value)}
-    //     required
-    // />
-    //     {this.state.title.touched && <ValidationError message={nameError} />}
 
     //-----> validation end
 
