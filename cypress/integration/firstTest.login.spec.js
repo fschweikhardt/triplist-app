@@ -7,6 +7,7 @@ describe('first cypress tests on trip list', () => {
         cy.visit('/')
         cy.contains('button', 'GET STARTED').click()
         cy.contains('button', 'LOG IN').click()
+        
     })
 
 })
