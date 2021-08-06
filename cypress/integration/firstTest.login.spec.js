@@ -10,6 +10,12 @@ describe('first cypress tests on trip list', () => {
         cy.visit('/')
         cy.contains('button', 'GET STARTED').click()
         cy.contains('button', 'LOG IN').click()
+        cy.get('form').then( input => {
+            cy.wrap(input).get('#username').type('demo')
+            cy.wrap(input).get('#password').type('demo')
+            cy.wrap(input).get('button').click()
+
+        })
 
     })
 
