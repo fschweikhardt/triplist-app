@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe.only('registration tests', () => {
+describe('registration tests', () => {
 
     it('should go to registration page', () => {
         cy.openRegistrationPage()
@@ -22,6 +22,7 @@ describe.only('registration tests', () => {
         cy.get('[data-cy="email"]').type('@demo.com')
         cy.get('[data-cy="registration-submit-button"]').click()
         //check for alert from server
+        cy.log('ALERT')
         cy.on('window:alert', res => {
             expect(res).to.equal('Choose a different username')
         })
