@@ -85,6 +85,7 @@ export default class Login extends React.Component {
                         type='text'
                         id='username'
                         name='username'
+                        data-cy='username'
                         required>
                     </input>
                 </label>
@@ -95,13 +96,16 @@ export default class Login extends React.Component {
                         type='password'
                         id='password'
                         name='password'
+                        data-cy='password'
                         required
                         >
                     </input>
                 </label>
                 <br />
                 <button
-                    type='submit'>
+                    type='submit'
+                    data-cy='login-submit-button'
+                >
                     SUBMIT
                 </button>
                 <br /> 

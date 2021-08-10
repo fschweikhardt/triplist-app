@@ -31,7 +31,10 @@ export default function Welcome(props) {
                             <h2 style={{color: 'rgb(35,90,135)', fontWeight: 'bold'}}>
                                 Log In
                             </h2>
-                            <button onClick={login}>
+                            <button 
+                                onClick={login}
+                                data-cy='login-button'
+                            >
                                 LOG IN
                             </button>
                         </section>
@@ -41,7 +44,10 @@ export default function Welcome(props) {
                             <h2 style={{color: 'rgb(35,90,135)', fontWeight: 'bold'}}>
                                 Register
                             </h2>
-                            <button onClick={register}>
+                            <button 
+                                onClick={register}
+                                data-cy='register-button'
+                            >
                                 REGISTER
                             </button>
                             <h2 style={{color: 'rgb(35,90,135)', fontWeight: 'bold', marginTop: '40px'}}>

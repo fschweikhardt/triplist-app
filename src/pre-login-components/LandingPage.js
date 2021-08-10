@@ -53,6 +53,7 @@ export default function LandingPage(props) {
               marginTop: '30px',
               backgroundColor: 'rgba(0,150,225, .9)', 
               borderRadius: '10px'}}
+              data-cy="enter"
           >
             <b>GET STARTED</b>
           </button>

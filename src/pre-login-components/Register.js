@@ -108,7 +108,12 @@ export default class Register extends React.Component{
                     height='auto'
                 />
                 <form onSubmit={this.handleSubmit} className='item form-container'>
-                    <h2 style={{color: 'rgb(35,90,135)', fontWeight: 'bold'}}>
+                    <h2 
+                        style={{color: 'rgb(35,90,135)', 
+                        fontWeight: 'bold'
+                        }}
+                        data-cy='title'
+                    >
                         SIGN UP
                     </h2>
                     <br />
@@ -119,6 +124,7 @@ export default class Register extends React.Component{
                             type='email'
                             id='email'
                             name='email'
+                            data-cy='email'
                             required
                             >
                         </input>
@@ -130,6 +136,7 @@ export default class Register extends React.Component{
                             type='text'
                             id='username'
                             name='username'
+                            data-cy='username'
                             required
                             >
                         </input>
@@ -142,6 +149,7 @@ export default class Register extends React.Component{
                             id='password'
                             name='password'
                             onChange={e => this.updatePassword(e.target.value)}
+                            data-cy='password'
                             required
                         >
                         </input>
@@ -150,6 +158,7 @@ export default class Register extends React.Component{
                     <br />
                     <button
                         type='submit'
+                        data-cy='registration-submit-button'
                     >
                         Submit
                     </button>
