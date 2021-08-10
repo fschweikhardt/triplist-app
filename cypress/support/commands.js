@@ -23,3 +23,15 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('openLoginPage', () => {
+    cy.visit('/')
+    cy.contains('button', 'GET STARTED').click()
+    cy.contains('button', 'LOG IN').click()
+})
+
+Cypress.Commands.add('openRegistrationPage', () => {
+    cy.visit('/')
+    cy.contains('button', 'GET STARTED').click()
+    cy.contains('button', 'REGISTER').click()
+})
