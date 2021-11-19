@@ -3,6 +3,7 @@
 #Docker
 .dockerignore
 Dockerfile
+docker-compose.yml
 
 # dependencies
 /node_modules
